@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const trustBadges = [
   { name: 'Microsoft', logo: '🪟' },
@@ -13,7 +13,7 @@ const trustBadges = [
 ];
 
 export default function Hero() {
-  const t = useTranslations('solutions.hero');
+  const { t } = useTranslation();
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">

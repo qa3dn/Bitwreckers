@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const processSteps = [
   {
@@ -55,7 +55,7 @@ const processSteps = [
 ];
 
 export default function Process() {
-  const t = useTranslations('solutions');
+  const { t } = useTranslation();
 
   return (
     <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">

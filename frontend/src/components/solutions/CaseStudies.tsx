@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const caseStudies = [
   {
@@ -49,7 +49,7 @@ const caseStudies = [
 ];
 
 export default function CaseStudies() {
-  const t = useTranslations('solutions');
+  const { t } = useTranslation();
 
   return (
     <section className="py-20 bg-white">

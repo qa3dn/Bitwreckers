@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const steps = [
   {
@@ -39,7 +39,7 @@ const steps = [
 ];
 
 export default function HowItWorks() {
-  const t = useTranslations('students');
+  const { t } = useTranslation();
 
   return (
     <section className="py-20 bg-white">

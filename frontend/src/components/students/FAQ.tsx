@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const faqs = [
   {
@@ -38,7 +38,7 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  const t = useTranslations('students');
+  const { t } = useTranslation();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const toggleFaq = (id: number) => {

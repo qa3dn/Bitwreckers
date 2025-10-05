@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const steps = [
   { id: 1, title: 'Personal Info', icon: '👤' },
@@ -12,7 +12,7 @@ const steps = [
 ];
 
 export default function ApplicationForm() {
-  const t = useTranslations('students');
+  const { t } = useTranslation();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     firstName: '',

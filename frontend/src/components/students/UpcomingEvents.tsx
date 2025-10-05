@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const events = [
   {
@@ -46,7 +46,7 @@ const events = [
 ];
 
 export default function UpcomingEvents() {
-  const t = useTranslations('students');
+  const { t } = useTranslation();
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);

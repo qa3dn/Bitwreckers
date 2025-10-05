@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const technologies = ['All', 'React', 'Node.js', 'Python', 'Flutter', 'DevOps', 'AI/ML'];
 
@@ -76,7 +76,7 @@ const projects = [
 ];
 
 export default function StudentProjects() {
-  const t = useTranslations('students');
+  const { t } = useTranslation();
   const [selectedTech, setSelectedTech] = useState('All');
   const [filteredProjects, setFilteredProjects] = useState(projects);
 

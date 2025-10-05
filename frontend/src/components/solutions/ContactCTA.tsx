@@ -1,10 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from '../../hooks/useTranslation';
 
 export default function ContactCTA() {
-  const t = useTranslations('solutions');
+  const { t } = useTranslation();
 
   return (
     <section className="py-20 bg-gradient-to-br from-blue-600 to-purple-600">
