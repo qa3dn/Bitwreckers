@@ -1,0 +1,13 @@
+{
+  "name": "contact-messages-setup",
+  "version": "1.0.0",
+  "description": "Setup script for contact_messages table",
+  "main": "setup_contact_messages.js",
+  "scripts": {
+    "setup": "node setup_contact_messages.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  }
+}
+

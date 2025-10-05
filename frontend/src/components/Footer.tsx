@@ -2,46 +2,56 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import useTranslation from '../hooks/useTranslation';
+import { 
+  FaFacebook, 
+  FaTelegram, 
+  FaLinkedin, 
+  FaGithub, 
+  FaInstagram
+} from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t, isRTL } = useTranslation();
 
   const footerLinks = {
     company: [
-      { name: 'About Us', href: '/about' },
-      { name: 'Our Team', href: '/team' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'News', href: '/news' },
+      { name: t('footer.company.about'), href: '/about' },
+      { name: 'Our Team', href: '/about#team' },
+      { name: t('footer.company.careers'), href: '/join' },
+      { name: 'Join Bitwreckers', href: '/join' },
     ],
     services: [
-      { name: 'Web Development', href: '/services/web' },
-      { name: 'Mobile Development', href: '/services/mobile' },
-      { name: 'UI/UX Design', href: '/services/ui-ux' },
-      { name: 'Consulting', href: '/services/consulting' },
+      { name: t('footer.services.webDevelopment'), href: '/services/web-development' },
+      { name: t('footer.services.mobileDevelopment'), href: '/services/mobile-development' },
+      { name: 'UI/UX Design', href: '/services/ui-ux-design' },
+      { name: 'Get Consultation', href: '/consultation' },
     ],
     resources: [
       { name: 'Blog', href: '/blog' },
-      { name: 'Guides', href: '/guides' },
+      { name: t('footer.resources.tutorials'), href: '/tutorials' },
       { name: 'FAQ', href: '/faq' },
-      { name: 'Support', href: '/support' },
+      { name: t('footer.resources.support'), href: '/support' },
     ],
     legal: [
-        { name: 'Privacy Policy', href: '/privacy' },
-        { name: 'Terms of Service', href: '/terms' },
-        { name: 'Cookie Policy', href: '/cookies' },
+        { name: t('footer.legal.privacy'), href: '/privacy' },
+        { name: t('footer.legal.terms'), href: '/terms' },
       ],
   };
 
   const socialLinks = [
-    { name: 'Facebook', href: '#', icon: 'facebook' },
-    { name: 'Twitter', href: '#', icon: 'twitter' },
-    { name: 'LinkedIn', href: '#', icon: 'linkedin' },
-    { name: 'Instagram', href: '#', icon: 'instagram' },
-    { name: 'GitHub', href: '#', icon: 'github' },
+    { name: 'Facebook', href: 'https://facebook.com/bitwreckers', icon: FaFacebook, color: 'hover:text-blue-500' },
+    { name: 'X (Twitter)', href: 'https://x.com/bitwreckers', icon: FaXTwitter, color: 'hover:text-gray-300' },
+    { name: 'Instagram', href: 'https://instagram.com/bitwreckers', icon: FaInstagram, color: 'hover:text-pink-500' },
+    { name: 'Telegram', href: 'https://t.me/bitwreckers', icon: FaTelegram, color: 'hover:text-blue-400' },
+    { name: 'LinkedIn', href: 'https://linkedin.com/company/bitwreckers', icon: FaLinkedin, color: 'hover:text-blue-600' },
+    { name: 'GitHub', href: 'https://github.com/bitwreckers', icon: FaGithub, color: 'hover:text-gray-300' },
   ];
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className={`bg-[#6B2D73]/95 backdrop-blur-md border-t border-[#6B2D73]/30 text-white ${isRTL ? 'font-arabic' : 'font-english'}`} dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
@@ -52,13 +62,12 @@ const Footer = () => {
               transition={{ duration: 0.5 }}
             >
               <Link href="/" className="inline-block mb-4">
-                <span className="text-3xl font-bold text-blue-400">
-                  Bitwreckers
+                <span className="text-3xl font-bold text-white">
+                  {t('navbar.logo')}
                 </span>
               </Link>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                A student-led programming company driven by young talents in Jordan and the MENA region. 
-                We develop innovative technical solutions and connect students with practical opportunities.
+                {t('footer.description')}
               </p>
               
               {/* Social Links */}
@@ -67,13 +76,14 @@ const Footer = () => {
                   <motion.a
                     key={social.name}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
+                    className={`w-10 h-10 bg-gray-800/50 rounded-full flex items-center justify-center text-gray-400 ${social.color} transition-all duration-200 hover:bg-gray-700/50`}
                   >
                     <span className="sr-only">{social.name}</span>
-                    {/* Icon placeholder */}
-                    <div className="w-5 h-5 bg-gray-400 rounded"></div>
+                    <social.icon className="w-5 h-5" />
                   </motion.a>
                 ))}
               </div>
@@ -86,13 +96,13 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h3 className="text-lg font-semibold mb-4">Company</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.company.title')}</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                    className="text-gray-200 hover:text-white transition-colors duration-200"
                   >
                     {link.name}
                   </Link>
@@ -107,13 +117,13 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-lg font-semibold mb-4">Services</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.services.title')}</h3>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                    className="text-gray-200 hover:text-white transition-colors duration-200"
                   >
                     {link.name}
                   </Link>
@@ -128,13 +138,13 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <h3 className="text-lg font-semibold mb-4">Resources</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.resources.title')}</h3>
             <ul className="space-y-2">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                    className="text-gray-200 hover:text-white transition-colors duration-200"
                   >
                     {link.name}
                   </Link>
@@ -149,11 +159,11 @@ const Footer = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="border-t border-gray-800 mt-12 pt-8"
+          className="border-t border-[#6B2D73]/30 mt-12 pt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {currentYear} Bitwreckers. All rights reserved.
+            <div className="text-gray-300 text-sm mb-4 md:mb-0">
+              {t('footer.copyright').replace('2024', currentYear.toString())}
             </div>
             
             <div className="flex flex-wrap gap-4 text-sm">
@@ -161,7 +171,7 @@ const Footer = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
                 >
                   {link.name}
                 </Link>

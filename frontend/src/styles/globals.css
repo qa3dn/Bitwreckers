@@ -4,11 +4,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-cairo: 'Cairo', system-ui, sans-serif;
+  --font-ibm-arabic: 'IBM Plex Sans Arabic', system-ui, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -72,7 +76,11 @@ a {
 }
 
 [dir="rtl"] .font-arabic {
-  font-family: var(--font-cairo), system-ui, sans-serif;
+  font-family: var(--font-ibm-arabic), var(--font-cairo), system-ui, sans-serif;
+}
+
+.font-arabic {
+  font-family: var(--font-ibm-arabic), var(--font-cairo), system-ui, sans-serif;
 }
 
 /* Smooth scrolling */
@@ -113,4 +121,23 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Simple fix for text clipping - just a little bit */
+h1, h2, h3, h4, h5, h6 {
+  padding: 1rem 0;
+  line-height: 1.3;
+}
+
+/* Fix for large headings */
+.text-5xl, .text-6xl, .text-7xl, .text-8xl {
+  padding: 1.5rem 0;
+  line-height: 1.2;
+}
+
+/* Fix for gradient text */
+.bg-clip-text {
+  padding: 1.5rem 0 2rem 0;
+  line-height: 1.2;
+  display: block;
 }

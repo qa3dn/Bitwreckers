@@ -1,0 +1,23 @@
+{
+  "name": "bitwreckers-dev-environment",
+  "version": "1.0.0",
+  "description": "Development environment startup script for Bitwreckers project",
+  "main": "start-all.js",
+  "scripts": {
+    "start": "node start-all.js",
+    "dev": "node start-all.js",
+    "start-all": "node start-all.js"
+  },
+  "keywords": [
+    "bitwreckers",
+    "development",
+    "startup",
+    "script"
+  ],
+  "author": "Bitwreckers Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
+

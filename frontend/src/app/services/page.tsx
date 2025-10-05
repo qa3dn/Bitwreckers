@@ -2,151 +2,124 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState } from 'react';
-
-const services = [
-  {
-    id: 'web-development',
-    title: 'Web Development',
-    description: 'Modern, responsive web applications built with cutting-edge technologies and best practices.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8">
-        <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M12 22V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M22 7L12 12L2 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-    color: 'from-cyan-400 to-blue-500',
-    glowColor: '#00F6FF'
-  },
-  {
-    id: 'mobile-apps',
-    title: 'Mobile Apps',
-    description: 'Native and cross-platform mobile applications for iOS and Android platforms.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8">
-        <rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
-        <line x1="12" y1="18" x2="12.01" y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-    color: 'from-purple-400 to-pink-500',
-    glowColor: '#A259FF'
-  },
-  {
-    id: 'ai-automation',
-    title: 'AI & Automation',
-    description: 'Intelligent solutions that streamline processes and enhance user experiences.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8">
-        <path d="M12 2L14.09 8.26L22 9L16 14.74L17.18 22.02L12 18.77L6.82 22.02L8 14.74L2 9L9.91 8.26L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-    color: 'from-green-400 to-emerald-500',
-    glowColor: '#00FF88'
-  },
-  {
-    id: 'cloud-devops',
-    title: 'Cloud & DevOps',
-    description: 'Scalable cloud infrastructure and automated deployment pipelines.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8">
-        <path d="M18 10H22L18 6L14 10H18Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M14 20H18L22 16L18 12L14 16H18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M6 9L2 5L6 1L10 5L6 9Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-    color: 'from-orange-400 to-red-500',
-    glowColor: '#FF6B35'
-  },
-  {
-    id: 'ui-ux-design',
-    title: 'UI/UX Design',
-    description: 'Beautiful, intuitive interfaces that delight users and drive engagement.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8">
-        <path d="M21 16V8A2 2 0 0 0 19 6H5A2 2 0 0 0 3 8V16A2 2 0 0 0 5 18H19A2 2 0 0 0 21 16Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M7 10H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M7 14H13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-    color: 'from-indigo-400 to-purple-500',
-    glowColor: '#8B5CF6'
-  },
-  {
-    id: 'consulting',
-    title: 'Tech Consulting',
-    description: 'Strategic technology guidance to help your business grow and innovate.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8">
-        <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2"/>
-        <path d="M19.4 15A1.65 1.65 0 0 0 21 13.35A1.65 1.65 0 0 0 19.4 11.65A1.65 1.65 0 0 0 17.75 13A1.65 1.65 0 0 0 19.4 15Z" stroke="currentColor" strokeWidth="2"/>
-        <path d="M4.6 15A1.65 1.65 0 0 0 6.25 13.35A1.65 1.65 0 0 0 4.6 11.65A1.65 1.65 0 0 0 2.95 13A1.65 1.65 0 0 0 4.6 15Z" stroke="currentColor" strokeWidth="2"/>
-        <path d="M12 4.6A1.65 1.65 0 0 0 13.35 2.95A1.65 1.65 0 0 0 12 1.3A1.65 1.65 0 0 0 10.65 2.95A1.65 1.65 0 0 0 12 4.6Z" stroke="currentColor" strokeWidth="2"/>
-      </svg>
-    ),
-    color: 'from-yellow-400 to-orange-500',
-    glowColor: '#FFD700'
-  }
-];
-
-const processSteps = [
-  {
-    step: '01',
-    title: 'Research & Strategy',
-    description: 'We analyze your needs and create a comprehensive development strategy.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
-        <path d="m21 21-4.35-4.35" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    )
-  },
-  {
-    step: '02',
-    title: 'Design & Prototype',
-    description: 'Our designers create stunning mockups and interactive prototypes.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <path d="M17 3A2.828 2.828 0 1 1 19.828 5.828L6.828 18.828A2.828 2.828 0 1 1 4 16L17 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M9 21V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M20 8L12 20L9 17L17 9L20 8Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    )
-  },
-  {
-    step: '03',
-    title: 'Development',
-    description: 'Expert developers bring your vision to life with clean, efficient code.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <polyline points="16,18 22,12 16,6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <polyline points="8,6 2,12 8,18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    )
-  },
-  {
-    step: '04',
-    title: 'Launch & Support',
-    description: 'We deploy your product and provide ongoing maintenance and support.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <path d="M4.5 16.5C-1.5 10.5 3 4 12 4S25.5 10.5 19.5 16.5L12 24L4.5 16.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M12 8L12 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M8 12L16 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    )
-  }
-];
+import Link from 'next/link';
+import useTranslation from '../../hooks/useTranslation';
+import { 
+  Globe, 
+  Smartphone, 
+  Bot, 
+  Cloud, 
+  Palette, 
+  Lightbulb,
+  Search,
+  Edit3,
+  Settings,
+  Rocket,
+  Mail,
+  Phone,
+  MessageCircle,
+  ChevronDown,
+  Target,
+  Zap,
+  Sparkles,
+  Wrench
+} from 'lucide-react';
 
 export default function ServicesPage() {
   const { scrollYProgress } = useScroll();
   const progressWidth = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
   const [hoveredService, setHoveredService] = useState<string | null>(null);
+  const { t, isRTL } = useTranslation();
+
+  const services = [
+    {
+      id: 'web-development',
+      title: t('services.webDevelopment.title'),
+      description: t('services.webDevelopment.description'),
+      icon: <Globe className="w-8 h-8" />,
+      color: 'from-[#2D7363] to-[#5fa896]',
+      glowColor: '#2D7363',
+      href: '/services/web-development'
+    },
+    {
+      id: 'mobile-apps',
+      title: t('services.mobileApps.title'),
+      description: t('services.mobileApps.description'),
+      icon: <Smartphone className="w-8 h-8" />,
+      color: 'from-[#2D7363] to-[#5fa896]',
+      glowColor: '#2D7363',
+      href: '/services/mobile-development'
+    },
+    {
+      id: 'ai-automation',
+      title: t('services.aiAutomation.title'),
+      description: t('services.aiAutomation.description'),
+      icon: <Bot className="w-8 h-8" />,
+      color: 'from-[#2D7363] to-[#5fa896]',
+      glowColor: '#2D7363',
+      href: '/consultation'
+    },
+    {
+      id: 'cloud-devops',
+      title: t('services.cloudDevops.title'),
+      description: t('services.cloudDevops.description'),
+      icon: <Cloud className="w-8 h-8" />,
+      color: 'from-[#2D7363] to-[#5fa896]',
+      glowColor: '#2D7363',
+      href: '/consultation'
+    },
+    {
+      id: 'ui-ux-design',
+      title: t('services.uiUxDesign.title'),
+      description: t('services.uiUxDesign.description'),
+      icon: <Palette className="w-8 h-8" />,
+      color: 'from-[#2D7363] to-[#5fa896]',
+      glowColor: '#2D7363',
+      href: '/services/ui-ux-design'
+    },
+    {
+      id: 'consulting',
+      title: t('services.techConsulting.title'),
+      description: t('services.techConsulting.description'),
+      icon: <Lightbulb className="w-8 h-8" />,
+      color: 'from-[#2D7363] to-[#5fa896]',
+      glowColor: '#2D7363',
+      href: '/consultation'
+    }
+  ];
+
+  const processSteps = [
+    {
+      step: '01',
+      title: t('services.howWeWork.research.title'),
+      description: t('services.howWeWork.research.description'),
+      icon: <Search className="w-6 h-6" />
+    },
+    {
+      step: '02',
+      title: t('services.howWeWork.design.title'),
+      description: t('services.howWeWork.design.description'),
+      icon: <Edit3 className="w-6 h-6" />
+    },
+    {
+      step: '03',
+      title: t('services.howWeWork.development.title'),
+      description: t('services.howWeWork.development.description'),
+      icon: <Settings className="w-6 h-6" />
+    },
+    {
+      step: '04',
+      title: t('services.howWeWork.launch.title'),
+      description: t('services.howWeWork.launch.description'),
+      icon: <Rocket className="w-6 h-6" />
+    }
+  ];
 
   return (
-    <div className="min-h-screen bg-[#0B0C10] text-white overflow-hidden">
+    <div className={`min-h-screen bg-gradient-to-br from-[#0f0f1b] via-[#131422] to-[#1a1a2e] text-white overflow-hidden ${isRTL ? 'font-arabic' : 'font-english'}`} dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 z-50"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#6B2D73] via-[#9347a0] to-[#2D7363] z-50"
         style={{ width: progressWidth }}
       />
       
@@ -155,19 +128,19 @@ export default function ServicesPage() {
         {/* Dynamic Background with Multiple Layers */}
         <div className="absolute inset-0">
           {/* Base Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900/80 to-slate-900" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0f0f1b] via-[#1a1a2e] to-[#131422]" />
           
           {/* Animated Grid Pattern */}
           <div className="absolute inset-0 opacity-20">
             <div className="absolute inset-0" style={{
-              backgroundImage: `radial-gradient(circle at 25% 25%, rgba(0, 246, 255, 0.1) 0%, transparent 50%),
-                               radial-gradient(circle at 75% 75%, rgba(162, 89, 255, 0.1) 0%, transparent 50%)`
+              backgroundImage: `radial-gradient(circle at 25% 25%, rgba(107, 45, 115, 0.1) 0%, transparent 50%),
+                               radial-gradient(circle at 75% 75%, rgba(45, 115, 99, 0.1) 0%, transparent 50%)`
             }} />
           </div>
           
           {/* Floating Geometric Shapes */}
           <motion.div
-            className="absolute top-20 left-20 w-96 h-96 border border-cyan-400/20 rounded-full"
+            className="absolute top-20 left-20 w-96 h-96 border border-[#6B2D73]/20 rounded-full"
             animate={{
               rotate: 360,
               scale: [1, 1.2, 1],
@@ -178,7 +151,7 @@ export default function ServicesPage() {
             }}
           />
           <motion.div
-            className="absolute bottom-20 right-20 w-80 h-80 border border-purple-400/20 rounded-full"
+            className="absolute bottom-20 right-20 w-80 h-80 border border-[#2D7363]/20 rounded-full"
             animate={{
               rotate: -360,
               scale: [1.2, 1, 1.2],
@@ -193,7 +166,7 @@ export default function ServicesPage() {
           {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-cyan-400 rounded-full"
+              className="absolute w-1 h-1 bg-[#b376bf] rounded-full"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -229,23 +202,24 @@ export default function ServicesPage() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.5, delay: 0.2 }}
             >
-              Our Services
+              {t('services.title')}
             </motion.h1>
             
             {/* Main Title */}
             <motion.h1
-              className="text-6xl md:text-8xl lg:text-9xl font-black bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent relative"
+              className="text-6xl md:text-8xl lg:text-9xl font-black bg-gradient-to-r from-[#b376bf] via-[#d4aad9] to-[#2D7363] bg-clip-text text-transparent relative flex items-center justify-center gap-6"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
             >
-              Our Services
+              <Wrench className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24" />
+              {t('services.title')}
             </motion.h1>
             
             {/* Glowing Underline */}
             <motion.div
-              className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full"
+              className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-[#6B2D73] to-[#2D7363] rounded-full"
               initial={{ width: 0 }}
               animate={{ width: "60%" }}
               transition={{ duration: 1.5, delay: 0.8 }}
@@ -260,30 +234,12 @@ export default function ServicesPage() {
             transition={{ duration: 1, delay: 0.5 }}
           >
             <motion.p
-              className="text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-5xl mx-auto leading-relaxed"
+              className="text-xl md:text-2xl lg:text-3xl text-[#F8F8F8] max-w-5xl mx-auto leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 1 }}
             >
-              We design, build, and scale{" "}
-              <motion.span
-                className="text-cyan-400 font-semibold"
-                animate={{
-                  textShadow: [
-                    "0 0 10px rgba(0, 246, 255, 0.5)",
-                    "0 0 20px rgba(0, 246, 255, 0.8)",
-                    "0 0 10px rgba(0, 246, 255, 0.5)"
-                  ]
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                innovative digital products
-              </motion.span>{" "}
-              tailored to your needs.
+{t('services.subtitle')}
             </motion.p>
           </motion.div>
           
@@ -295,18 +251,18 @@ export default function ServicesPage() {
             transition={{ duration: 1, delay: 0.8 }}
           >
             {[
-              { icon: "🚀", label: "Web Apps", color: "from-cyan-400 to-blue-500" },
-              { icon: "📱", label: "Mobile", color: "from-purple-400 to-pink-500" },
-              { icon: "🤖", label: "AI/ML", color: "from-green-400 to-emerald-500" },
-              { icon: "☁️", label: "Cloud", color: "from-orange-400 to-red-500" }
+              { icon: <Globe className="w-8 h-8" />, label: t('services.categories.webApps'), color: "from-[#2D7363] to-[#5fa896]" },
+              { icon: <Smartphone className="w-8 h-8" />, label: t('services.categories.mobile'), color: "from-[#2D7363] to-[#5fa896]" },
+              { icon: <Bot className="w-8 h-8" />, label: t('services.categories.aiMl'), color: "from-[#2D7363] to-[#5fa896]" },
+              { icon: <Cloud className="w-8 h-8" />, label: t('services.categories.cloud'), color: "from-[#2D7363] to-[#5fa896]" }
             ].map((service, index) => (
               <motion.div
                 key={index}
-                className="group relative p-6 bg-gray-800/30 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-500 cursor-pointer"
+                className="group relative p-6 bg-gray-800/30 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-[#6B2D73]/50 transition-all duration-500 cursor-pointer flex flex-col items-center text-center"
                 whileHover={{ 
                   scale: 1.1, 
                   y: -10,
-                  boxShadow: "0 20px 40px rgba(0, 246, 255, 0.2)"
+                  boxShadow: "0 20px 40px rgba(107, 45, 115, 0.2)"
                 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 30 }}
@@ -314,12 +270,12 @@ export default function ServicesPage() {
                 transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
               >
                 {/* Service Icon */}
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="mb-4 group-hover:scale-110 transition-transform duration-300 text-white">
                   {service.icon}
                 </div>
                 
                 {/* Service Label */}
-                <div className="text-sm font-semibold text-gray-300 group-hover:text-white transition-colors duration-300">
+                <div className="text-sm font-semibold text-white transition-colors duration-300">
                   {service.label}
                 </div>
                 
@@ -336,7 +292,7 @@ export default function ServicesPage() {
                 {[...Array(3)].map((_, particleIndex) => (
                   <motion.div
                     key={particleIndex}
-                    className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100"
+                    className="absolute w-1 h-1 bg-[#b376bf] rounded-full opacity-0 group-hover:opacity-100"
                     style={{
                       top: `${20 + particleIndex * 30}%`,
                       left: `${20 + particleIndex * 30}%`,
@@ -359,28 +315,35 @@ export default function ServicesPage() {
           
           {/* Interactive Scroll Indicator */}
           <motion.div
-            className="flex flex-col items-center"
+            className="flex flex-col items-center cursor-pointer"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.5 }}
+            onClick={() => {
+              const nextSection = document.querySelector('#services-grid');
+              if (nextSection) {
+                nextSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
           >
             <motion.div
-              className="text-gray-400 text-sm mb-2"
+              className="text-[#F8F8F8]/80 text-sm mb-2 flex items-center gap-2 hover:text-white transition-colors duration-300"
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              Scroll to explore
+              <ChevronDown className="w-4 h-4" />
+              {t('services.scrollToExplore')}
             </motion.div>
             <motion.div
-              className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center"
-              animate={{ borderColor: ["#9CA3AF", "#00F6FF", "#9CA3AF"] }}
+              className="w-6 h-10 border-2 border-[#F8F8F8]/80 rounded-full flex justify-center hover:border-white transition-colors duration-300"
+              animate={{ borderColor: ["#F8F8F8", "#6B2D73", "#F8F8F8"] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
               <motion.div
-                className="w-1 h-3 bg-gray-400 rounded-full mt-2"
+                className="w-1 h-3 bg-[#F8F8F8]/80 rounded-full mt-2"
                 animate={{ 
                   y: [0, 12, 0],
-                  backgroundColor: ["#9CA3AF", "#00F6FF", "#9CA3AF"]
+                  backgroundColor: ["#F8F8F8", "#6B2D73", "#F8F8F8"]
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
@@ -390,20 +353,19 @@ export default function ServicesPage() {
         
         {/* Floating Action Button */}
         <motion.button
-          className="absolute bottom-8 right-8 w-16 h-16 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full shadow-2xl hover:shadow-cyan-400/25 transition-all duration-300 group"
+          className="absolute bottom-8 right-8 w-16 h-16 bg-gradient-to-r from-[#6B2D73] to-[#9347a0] rounded-full shadow-2xl hover:shadow-[#6B2D73]/25 transition-all duration-300 group flex items-center justify-center"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 2 }}
+          onClick={() => window.open('/consultation', '_blank')}
         >
-          <svg className="w-8 h-8 text-white mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-          </svg>
+          <MessageCircle className="w-6 h-6 text-white" />
           
           {/* Pulse Effect */}
           <motion.div
-            className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 opacity-75"
+            className="absolute inset-0 rounded-full bg-gradient-to-r from-[#6B2D73] to-[#9347a0] opacity-75"
             animate={{
               scale: [1, 1.5, 1],
               opacity: [0.75, 0, 0.75],
@@ -418,20 +380,21 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid Section */}
-      <section className="py-20 px-4 relative">
-        <div className="container mx-auto">
+      <section id="services-grid" className="py-20 px-4 relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
-            className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 sm:mb-16 bg-gradient-to-r from-[#b376bf] to-[#d4aad9] bg-clip-text text-transparent flex items-center justify-center gap-3 sm:gap-4 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            What We Offer
+            <Target className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
+            {t('services.whatWeOffer')}
           </motion.h2>
           
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -459,23 +422,33 @@ export default function ServicesPage() {
                 
                 {/* Service Icon */}
                 <motion.div
-                  className={`inline-block p-4 rounded-2xl bg-gradient-to-r ${service.color} text-white text-4xl mb-6`}
+                  className={`inline-block p-4 rounded-2xl bg-gradient-to-r ${service.color} mb-6 flex items-center justify-center`}
                   initial={{ scale: 0, rotate: -180 }}
                   whileInView={{ scale: 1, rotate: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 + 0.2, type: "spring", bounce: 0.4 }}
                   viewport={{ once: true }}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
                 >
-                  {service.icon}
+                  <div className="text-white">
+                    {service.icon}
+                  </div>
                 </motion.div>
                 
                 {/* Service Content */}
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#b376bf] transition-colors duration-300">
                   {service.title}
                 </h3>
                 
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-[#F8F8F8]/80 leading-relaxed mb-6">
                   {service.description}
                 </p>
+                
+                {/* Service Link - Click anywhere on card to navigate */}
+                {service.href && (
+                  <Link href={service.href} className="absolute inset-0 z-10">
+                    <span className="sr-only">View {service.title} details</span>
+                  </Link>
+                )}
                 
                 {/* Hover Glow Border */}
                 <motion.div
@@ -493,15 +466,16 @@ export default function ServicesPage() {
 
       {/* Process Section */}
       <section className="py-20 px-4 relative overflow-hidden">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
-            className="text-4xl md:text-5xl font-bold text-center mb-20 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+            className="text-4xl md:text-5xl font-bold text-center mb-20 bg-gradient-to-r from-[#2D7363] to-[#5fa896] bg-clip-text text-transparent flex items-center justify-center gap-4"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            How We Work
+            <Zap className="w-10 h-10" />
+            {t('services.howWeWork.title')}
           </motion.h2>
           
           <div className="relative max-w-7xl mx-auto">
@@ -520,7 +494,7 @@ export default function ServicesPage() {
                   >
                     {/* Step Circle with Enhanced Design */}
                     <motion.div 
-                      className={`relative z-20 flex-shrink-0 w-28 h-28 ${
+                      className={`relative z-20 flex-shrink-0 w-32 h-32 ${
                         index % 2 === 0 ? 'mr-16' : 'ml-16'
                       }`}
                       whileHover={{ scale: 1.15, rotate: 5 }}
@@ -528,10 +502,10 @@ export default function ServicesPage() {
                     >
                       {/* Outer Glow Ring */}
                       <motion.div
-                        className="absolute inset-0 w-full h-full bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-full blur-xl opacity-40"
+                        className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#6B2D73] via-[#9347a0] to-[#2D7363] rounded-full blur-xl opacity-50"
                         animate={{
-                          scale: [1, 1.2, 1],
-                          opacity: [0.4, 0.7, 0.4],
+                          scale: [1, 1.3, 1],
+                          opacity: [0.5, 0.8, 0.5],
                         }}
                         transition={{
                           duration: 3,
@@ -541,9 +515,9 @@ export default function ServicesPage() {
                       />
                       
                       {/* Main Circle */}
-                      <div className="relative w-full h-full bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-gray-900">
+                      <div className="relative w-full h-full bg-gradient-to-br from-[#6B2D73] via-[#9347a0] to-[#2D7363] rounded-full flex items-center justify-center shadow-2xl border-4 border-white/20">
                         {/* Inner Circle */}
-                        <div className="w-20 h-20 bg-gray-900 rounded-full flex items-center justify-center border-2 border-gray-700">
+                        <div className="w-24 h-24 bg-[#131422] rounded-full flex items-center justify-center border-3 border-white/30 shadow-inner">
                           <div className="text-white">
                             {step.icon}
                           </div>
@@ -551,11 +525,12 @@ export default function ServicesPage() {
                         
                         {/* Step Number Badge */}
                         <motion.div
-                          className="absolute -top-3 -right-3 w-10 h-10 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-sm font-bold text-black shadow-xl border-2 border-gray-900"
+                          className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-r from-[#2D7363] to-[#5fa896] rounded-full flex items-center justify-center text-lg font-black text-white shadow-2xl border-3 border-white/30"
                           initial={{ scale: 0, rotate: -180 }}
                           whileInView={{ scale: 1, rotate: 0 }}
                           transition={{ duration: 0.6, delay: index * 0.3 + 0.5, type: "spring", bounce: 0.6 }}
                           viewport={{ once: true }}
+                          whileHover={{ scale: 1.1, rotate: 10 }}
                         >
                           {step.step}
                         </motion.div>
@@ -564,7 +539,7 @@ export default function ServicesPage() {
                         {[...Array(3)].map((_, particleIndex) => (
                           <motion.div
                             key={particleIndex}
-                            className="absolute w-2 h-2 bg-cyan-400 rounded-full"
+                            className="absolute w-2 h-2 bg-[#b376bf] rounded-full"
                             style={{
                               top: `${20 + particleIndex * 20}%`,
                               left: `${20 + particleIndex * 20}%`,
@@ -591,23 +566,23 @@ export default function ServicesPage() {
                       whileHover={{ scale: 1.03 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="relative bg-gray-900/80 backdrop-blur-xl rounded-3xl p-10 border border-gray-700/50 shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 group overflow-hidden">
+                      <div className="relative bg-[#131422]/80 backdrop-blur-xl rounded-3xl p-10 border border-gray-700/50 shadow-2xl hover:shadow-[#6B2D73]/20 transition-all duration-500 group overflow-hidden">
                         {/* Animated Background Pattern */}
                         <div className="absolute inset-0 opacity-5">
-                          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-3xl" />
-                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-400/10 to-transparent rounded-full blur-3xl" />
-                          <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-br from-purple-400/10 to-transparent rounded-full blur-3xl" />
+                          <div className="absolute inset-0 bg-gradient-to-br from-[#6B2D73]/20 via-[#9347a0]/20 to-[#2D7363]/20 rounded-3xl" />
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#6B2D73]/10 to-transparent rounded-full blur-3xl" />
+                          <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-br from-[#2D7363]/10 to-transparent rounded-full blur-3xl" />
                         </div>
                         
                         {/* Content */}
                         <div className="relative z-10">
                           <motion.h3 
-                            className="text-4xl font-bold text-white mb-6 group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500"
+                            className="text-4xl font-bold text-white mb-6 group-hover:bg-gradient-to-r group-hover:from-[#b376bf] group-hover:to-[#2D7363] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500"
                             whileHover={{ x: index % 2 === 0 ? -15 : 15 }}
                           >
                             {step.title}
                           </motion.h3>
-                          <p className="text-gray-300 leading-relaxed text-xl group-hover:text-gray-100 transition-colors duration-500">
+                          <p className="text-[#F8F8F8]/80 leading-relaxed text-xl group-hover:text-[#F8F8F8] transition-colors duration-500">
                             {step.description}
                           </p>
                         </div>
@@ -616,14 +591,14 @@ export default function ServicesPage() {
                         <motion.div
                           className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                           style={{
-                            background: `linear-gradient(135deg, rgba(0, 246, 255, 0.1), rgba(162, 89, 255, 0.1))`,
-                            boxShadow: `0 0 60px rgba(0, 246, 255, 0.4), 0 0 120px rgba(162, 89, 255, 0.3)`
+                            background: `linear-gradient(135deg, rgba(107, 45, 115, 0.1), rgba(45, 115, 99, 0.1))`,
+                            boxShadow: `0 0 60px rgba(107, 45, 115, 0.4), 0 0 120px rgba(45, 115, 99, 0.3)`
                           }}
                         />
                         
                         {/* Corner Accents */}
-                        <div className="absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 border-cyan-400 rounded-tl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <div className="absolute bottom-0 right-0 w-20 h-20 border-r-2 border-b-2 border-purple-400 rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 border-[#6B2D73] rounded-tl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute bottom-0 right-0 w-20 h-20 border-r-2 border-b-2 border-[#2D7363] rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       </div>
                     </motion.div>
                   </motion.div>
@@ -635,10 +610,10 @@ export default function ServicesPage() {
 
       {/* Enhanced CTA Section */}
       <section className="py-32 px-4 relative overflow-hidden">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Animated Background Elements */}
           <motion.div
-            className="absolute top-0 left-0 w-96 h-96 bg-cyan-400/10 rounded-full mix-blend-screen filter blur-3xl"
+            className="absolute top-0 left-0 w-96 h-96 bg-[#6B2D73]/10 rounded-full mix-blend-screen filter blur-3xl"
             animate={{
               scale: [1, 1.3, 1],
               x: [0, 100, 0],
@@ -651,7 +626,7 @@ export default function ServicesPage() {
             }}
           />
           <motion.div
-            className="absolute bottom-0 right-0 w-80 h-80 bg-purple-400/10 rounded-full mix-blend-screen filter blur-3xl"
+            className="absolute bottom-0 right-0 w-80 h-80 bg-[#2D7363]/10 rounded-full mix-blend-screen filter blur-3xl"
             animate={{
               scale: [1.2, 1, 1.2],
               x: [0, -80, 0],
@@ -666,7 +641,7 @@ export default function ServicesPage() {
           
           {/* Main Content Container */}
           <motion.div
-            className="relative bg-gray-900/80 backdrop-blur-xl rounded-3xl border border-gray-700/50 overflow-hidden"
+            className="relative bg-[#131422]/80 backdrop-blur-xl rounded-3xl border border-[#6B2D73]/50 overflow-hidden"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -674,51 +649,34 @@ export default function ServicesPage() {
           >
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-5">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-purple-500/20 to-pink-500/20" />
-              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-cyan-400/20 to-transparent rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-transparent rounded-full blur-3xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#6B2D73]/20 via-[#9347a0]/20 to-[#2D7363]/20" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#6B2D73]/20 to-transparent rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-[#2D7363]/20 to-transparent rounded-full blur-3xl" />
             </div>
             
             {/* Content */}
             <div className="relative z-10 text-center py-20 px-8">
               {/* Title with Enhanced Animation */}
               <motion.h2
-                className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight"
+                className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-[#b376bf] via-[#d4aad9] to-[#2D7363] bg-clip-text text-transparent leading-tight flex items-center justify-center gap-4"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                Let's build something
-                <br />
-                <motion.span
-                  className="inline-block"
-                  animate={{
-                    textShadow: [
-                      "0 0 20px rgba(0, 246, 255, 0.5)",
-                      "0 0 40px rgba(162, 89, 255, 0.5)",
-                      "0 0 20px rgba(0, 246, 255, 0.5)"
-                    ]
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
-                  amazing together
-                </motion.span>
+                <Sparkles className="w-12 h-12 md:w-16 md:h-16" />
+                {t('services.cta.title')}
               </motion.h2>
               
               {/* Subtitle */}
               <motion.p
-                className="text-xl md:text-2xl text-gray-300 mb-16 max-w-3xl mx-auto leading-relaxed"
+                className="text-xl md:text-2xl text-[#F8F8F8] mb-16 max-w-3xl mx-auto leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                Ready to transform your ideas into reality? Let's discuss your project and create something extraordinary that pushes the boundaries of innovation.
+{t('services.cta.subtitle')}
               </motion.p>
               
               {/* Interactive Stats */}
@@ -730,19 +688,19 @@ export default function ServicesPage() {
                 viewport={{ once: true }}
               >
                 {[
-                  { number: "500+", label: "Projects Delivered", icon: "🚀" },
-                  { number: "24h", label: "Response Time", icon: "⚡" },
-                  { number: "98%", label: "Client Satisfaction", icon: "⭐" }
+                  { number: "20+", label: t('services.stats.projectsDelivered'), icon: <Rocket className="w-8 h-8" /> },
+                  { number: "24h", label: t('services.stats.responseTime'), icon: <Zap className="w-8 h-8" /> },
+                  { number: "98%", label: t('services.stats.clientSatisfaction'), icon: <Sparkles className="w-8 h-8" /> }
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
-                    className="group relative p-6 bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-500"
+                    className="group relative p-6 bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:border-[#6B2D73]/50 transition-all duration-500"
                     whileHover={{ scale: 1.05, y: -5 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="text-4xl mb-3">{stat.icon}</div>
+                    <div className="mb-3">{stat.icon}</div>
                     <motion.div
-                      className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2"
+                      className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#b376bf] to-[#d4aad9] bg-clip-text text-transparent mb-2"
                       animate={{
                         scale: [1, 1.1, 1],
                       }}
@@ -755,7 +713,7 @@ export default function ServicesPage() {
                     >
                       {stat.number}
                     </motion.div>
-                    <div className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                    <div className="text-[#F8F8F8]/80 group-hover:text-[#F8F8F8] transition-colors duration-300">
                       {stat.label}
                     </div>
                     
@@ -763,7 +721,7 @@ export default function ServicesPage() {
                     <motion.div
                       className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                       style={{
-                        boxShadow: `0 0 30px rgba(0, 246, 255, 0.3)`
+                        boxShadow: `0 0 30px rgba(107, 45, 115, 0.3)`
                       }}
                     />
                   </motion.div>
@@ -780,15 +738,19 @@ export default function ServicesPage() {
               >
                 {/* Primary CTA */}
                 <motion.button
-                  className="group relative px-12 py-6 bg-gradient-to-r from-cyan-400 to-purple-500 text-white rounded-full font-bold text-xl shadow-2xl hover:shadow-cyan-400/25 transition-all duration-300 overflow-hidden"
+                  className="group relative px-12 py-6 bg-gradient-to-r from-[#2D7363] to-[#5fa896] text-white rounded-full font-bold text-xl shadow-2xl hover:shadow-[#2D7363]/25 transition-all duration-300 overflow-hidden"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => window.open('/consultation', '_blank')}
                 >
-                  <span className="relative z-10">Start Your Project</span>
+                  <span className="relative z-10 flex items-center gap-3">
+                    <Rocket className="w-5 h-5" />
+                    {t('services.cta.startProject')}
+                  </span>
                   
                   {/* Animated Background */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="absolute inset-0 bg-gradient-to-r from-[#5fa896] to-[#8fd5c4] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     initial={{ x: "-100%" }}
                     whileHover={{ x: "0%" }}
                     transition={{ duration: 0.3 }}
@@ -796,7 +758,7 @@ export default function ServicesPage() {
                   
                   {/* Glow Effect */}
                   <motion.div
-                    className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300"
+                    className="absolute inset-0 rounded-full bg-gradient-to-r from-[#2D7363] to-[#5fa896] opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300"
                     animate={{
                       scale: [1, 1.2, 1],
                     }}
@@ -830,57 +792,46 @@ export default function ServicesPage() {
                   ))}
                 </motion.button>
                 
-                {/* Secondary CTA */}
-                <motion.button
-                  className="group relative px-12 py-6 border-2 border-cyan-400 text-cyan-400 rounded-full font-bold text-xl hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span className="relative z-10">View Portfolio</span>
-                  
-                  {/* Hover Background */}
-                  <motion.div
-                    className="absolute inset-0 bg-cyan-400 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"
-                  />
-                </motion.button>
               </motion.div>
               
               {/* Contact Info */}
               <motion.div
-                className="mt-16 text-gray-400"
+                className="mt-16 text-[#F8F8F8]/80"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
                 viewport={{ once: true }}
               >
-                <p className="mb-4">Ready to get started? Reach out to us:</p>
+                <p className="mb-4">{t('services.cta.readyToStart')}</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <motion.a
-                    href="mailto:hello@bitwreckers.com"
-                    className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
+                    href="mailto:bitwreckers@gmail.com"
+                    className="text-[#b376bf] hover:text-[#d4aad9] transition-colors duration-300 flex items-center gap-2"
                     whileHover={{ scale: 1.05 }}
                   >
-                    hello@bitwreckers.com
+                    <Mail className="w-4 h-4" />
+                    bitwreckers@gmail.com
                   </motion.a>
                   <span className="hidden sm:block text-gray-600">|</span>
                   <motion.a
-                    href="tel:+1234567890"
-                    className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
+                    href="tel:+962780242419"
+                    className="text-[#b376bf] hover:text-[#d4aad9] transition-colors duration-300 flex items-center gap-2"
                     whileHover={{ scale: 1.05 }}
                   >
-                    +1 (234) 567-890
+                    <Phone className="w-4 h-4" />
+                    0780242419
                   </motion.a>
                 </div>
               </motion.div>
             </div>
             
             {/* Corner Accents */}
-            <div className="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-cyan-400/50 rounded-tl-3xl" />
-            <div className="absolute bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-purple-400/50 rounded-br-3xl" />
+            <div className="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-[#6B2D73]/50 rounded-tl-3xl" />
+            <div className="absolute bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-[#2D7363]/50 rounded-br-3xl" />
             
             {/* Floating Elements */}
             <motion.div
-              className="absolute top-10 right-10 w-6 h-6 bg-cyan-400 rounded-full opacity-60"
+              className="absolute top-10 right-10 w-6 h-6 bg-[#b376bf] rounded-full opacity-60"
               animate={{
                 y: [0, -20, 0],
                 opacity: [0.6, 1, 0.6],
@@ -892,7 +843,7 @@ export default function ServicesPage() {
               }}
             />
             <motion.div
-              className="absolute bottom-10 left-10 w-4 h-4 bg-purple-400 rounded-full opacity-60"
+              className="absolute bottom-10 left-10 w-4 h-4 bg-[#2D7363] rounded-full opacity-60"
               animate={{
                 y: [0, -15, 0],
                 opacity: [0.6, 1, 0.6],

@@ -1,0 +1,919 @@
+{
+  "common": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "products": "Products",
+    "solutions": "Solutions",
+    "students": "Students",
+    "innovation": "Innovation",
+    "community": "Community",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "portfolio": "Portfolio",
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "joinUs": "Join Us",
+    "applyNow": "Apply Now",
+    "viewDetails": "View Details",
+    "bookCall": "Book a Call",
+    "downloadProfile": "Download Profile",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Info"
+  },
+  "navbar": {
+    "logo": "Bitwreckers",
+    "tagline": "Break the Code, Build the Future",
+    "menu": "Menu",
+    "close": "Close",
+    "language": "Language",
+    "arabic": "العربية",
+    "english": "English"
+  },
+  "hero": {
+    "title": "Bitwreckers",
+    "subtitle": "Break the Code, Build the Future",
+    "description": "A student-led programming company driven by young talents in Jordan and the MENA region",
+    "cta1": "Join as Student",
+    "cta2": "Get Consultation",
+    "stats": {
+      "students": "Active Students",
+      "projects": "Completed Projects",
+      "companies": "Partner Companies",
+      "years": "Years of Experience"
+    }
+  },
+  "features": {
+    "title": "Our Five Pillars",
+    "subtitle": "We build the future through these fundamental pillars",
+    "innovation": {
+      "title": "Innovation",
+      "description": "We believe in the power of innovation to change the world"
+    },
+    "education": {
+      "title": "Education",
+      "description": "We provide high-quality education for students at all levels"
+    },
+    "community": {
+      "title": "Community",
+      "description": "We build a strong community of developers and creators"
+    },
+    "technology": {
+      "title": "Technology",
+      "description": "We use cutting-edge technologies to build innovative solutions"
+    },
+    "growth": {
+      "title": "Growth",
+      "description": "We help students and companies grow and evolve"
+    }
+  },
+  "students": {
+    "title": "Innovation in Every Line of Code",
+    "subtitle": "Join our community of talented developers and build your future in technology",
+    "techPaths": {
+      "title": "Tech Paths",
+      "techMedia": "Tech-Media",
+      "devops": "DevOps",
+      "backend": "Backend",
+      "mobile": "Mobile",
+      "web": "Web"
+    },
+    "howItWorks": {
+      "title": "How Does It Work?",
+      "ship": {
+        "title": "Ship Your Ideas",
+        "description": "Submit your innovative project ideas and get ready to build something amazing"
+      },
+      "sprint": {
+        "title": "Sprint Team",
+        "description": "Join our sprint teams and collaborate with like-minded developers"
+      },
+      "challenge": {
+        "title": "Challenge Yourself",
+        "description": "Take on real-world challenges and push your skills to the limit"
+      },
+      "apply": {
+        "title": "Apply & Grow",
+        "description": "Apply your knowledge and grow your career with real opportunities"
+      }
+    },
+    "benefits": {
+      "title": "Benefits of Joining",
+      "mentorship": {
+        "title": "Mentorship",
+        "description": "Get guidance from industry experts"
+      },
+      "showcase": {
+        "title": "Showcase",
+        "description": "Showcase your work to potential employers"
+      },
+      "stipends": {
+        "title": "Stipends",
+        "description": "Earn stipends for your contributions"
+      },
+      "realClients": {
+        "title": "Real Clients",
+        "description": "Work with real clients and projects"
+      },
+      "codeReviews": {
+        "title": "Code Reviews",
+        "description": "Get professional code reviews"
+      }
+    },
+    "projects": {
+      "title": "Student Projects",
+      "all": "All",
+      "completed": "Completed",
+      "inProgress": "In Progress",
+      "planning": "Planning"
+    },
+    "events": {
+      "title": "Upcoming Events",
+      "hackathon": "Hackathon",
+      "workshop": "Workshop",
+      "lecture": "Lecture",
+      "meetup": "Meetup",
+      "participants": "participants"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "How can I join the student program?",
+      "a1": "Submit your application through our portal and we'll review your profile within 48 hours",
+      "q2": "What technologies do you work with?",
+      "a2": "We work with a wide range of technologies including React, Node.js, Python, AI/ML, and more",
+      "q3": "Is there any cost to participate?",
+      "a3": "No, our student program is completely free and you can even earn stipends for your contributions"
+    },
+    "application": {
+      "title": "Application Form",
+      "fullName": "Full Name",
+      "email": "Email",
+      "university": "University",
+      "field": "Preferred Field",
+      "webDev": "Web Development",
+      "mobileDev": "Mobile Development",
+      "ai": "Artificial Intelligence",
+      "devops": "DevOps",
+      "design": "Design",
+      "message": "Application Message",
+      "submitApplication": "Submit Application",
+      "careerPortal": "Career Portal"
+    }
+  },
+  "products": {
+    "title": "Products & Platforms",
+    "subtitle": "A collection of innovative products and platforms we develop to serve various sectors",
+    "categories": {
+      "all": "All",
+      "ai": "AI/ML",
+      "mobile": "Mobile",
+      "web": "Web"
+    },
+    "status": {
+      "live": "Live",
+      "beta": "Beta",
+      "development": "Development"
+    },
+    "technologies": "Technologies Used",
+    "activeUsers": "Active Users",
+    "rating": "Rating",
+    "exploreAll": "Explore All Products"
+  },
+  "solutions": {
+    "title": "Today's Solutions for Tomorrow's Technology",
+    "subtitle": "We provide integrated technical solutions that help companies grow and innovate in the digital age",
+    "process": {
+      "title": "Our Process",
+      "discovery": {
+        "title": "Discovery & Analysis",
+        "description": "We analyze your requirements and create a comprehensive plan"
+      },
+      "architecture": {
+        "title": "Architecture Design",
+        "description": "Design scalable and robust system architecture"
+      },
+      "sprint": {
+        "title": "Sprint Development",
+        "description": "Agile development with regular milestones and updates"
+      },
+      "handover": {
+        "title": "Handover & QA",
+        "description": "Thorough testing and quality assurance"
+      },
+      "delivery": {
+        "title": "Delivery & Support",
+        "description": "Deploy and provide ongoing support and maintenance"
+      }
+    },
+    "caseStudies": {
+      "title": "Selected Case Studies",
+      "before": "Before",
+      "after": "After",
+      "results": "Results"
+    },
+    "cta": {
+      "title": "Ready to Start Your Project?",
+      "subtitle": "Book a free exploratory call and let's discuss how we can help you achieve your goals"
+    }
+  },
+  "innovation": {
+    "title": "Innovation & Entrepreneurship",
+    "subtitle": "We foster innovation and help students transform their ideas into successful projects",
+    "accelerator": {
+      "title": "Student Ideas Accelerator Program",
+      "description": "We help students transform their ideas into successful projects",
+      "criteria": {
+        "title": "Acceptance Criteria",
+        "innovation": {
+          "title": "Innovation",
+          "description": "Innovative idea that solves a real problem"
+        },
+        "feasibility": {
+          "title": "Feasibility",
+          "description": "Technically and financially feasible"
+        },
+        "impact": {
+          "title": "Impact",
+          "description": "Positive impact on society"
+        },
+        "team": {
+          "title": "Team",
+          "description": "Collaborative and enthusiastic team"
+        }
+      },
+      "deadlines": {
+        "title": "Important Deadlines",
+        "initialApplication": "Initial Application",
+        "secondRound": "Second Round Interviews",
+        "finalResults": "Final Results Announcement",
+        "open": "Open",
+        "comingSoon": "Coming Soon"
+      },
+      "funding": {
+        "title": "Support & Development",
+        "amount": "We Build Your Idea",
+        "description": "We develop your idea and bring it under our umbrella as part of our ecosystem",
+        "benefits": [
+          "Full Development Support",
+          "Expert Mentorship",
+          "Technical Resources",
+          "Platform Integration"
+        ]
+      }
+    },
+    "pipeline": {
+      "title": "Idea Development Journey",
+      "ideation": {
+        "title": "Idea Development",
+        "description": "Market analysis and prototype development",
+        "duration": "2-4 weeks"
+      },
+      "building": {
+        "title": "Prototype Building",
+        "description": "MVP development and idea testing",
+        "duration": "4-8 weeks"
+      },
+      "testing": {
+        "title": "Market Testing",
+        "description": "Gathering feedback and product improvement",
+        "duration": "2-6 weeks"
+      },
+      "launch": {
+        "title": "Product Launch",
+        "description": "Official launch and user acquisition",
+        "duration": "Ongoing"
+      }
+    },
+    "incubated": {
+      "title": "Incubated Ideas",
+      "team": "Team",
+      "category": "Category",
+      "progress": "Progress",
+      "status": {
+        "ready": "Ready for Launch",
+        "development": "In Development"
+      }
+    },
+    "cta": {
+      "title": "Have an Innovative Idea?",
+      "subtitle": "Join our program and help us turn your idea into reality",
+      "applyNow": "Apply Now",
+      "learnMore": "Learn More"
+    }
+  },
+  "community": {
+    "title": "Community",
+    "subtitle": "Join our growing network of students, experts, and mentors",
+    "stats": {
+      "totalMembers": "Total Members",
+      "activeStudents": "Active Students",
+      "experts": "Experts",
+      "mentors": "Mentors",
+      "graduates": "Graduates"
+    },
+    "map": {
+      "title": "Interactive Community Map"
+    },
+    "events": {
+      "title": "Events Calendar",
+      "noEvents": "No events this month"
+    },
+    "cta": {
+      "title": "Join Our Community",
+      "subtitle": "Connect with developers and experts, participate in events and workshops",
+      "joinNow": "Join Now",
+      "browseEvents": "Browse Events"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Who we are, our vision, our mission, and what drives us forward.",
+    "vision": {
+      "title": "Our Vision",
+      "description": "A leading student-driven tech platform focused on developing digital projects and innovative software solutions, relying on student programmers as the core engine of innovation, and empowering them to become an influential and effective technical force, while building an integrated digital ecosystem that drives innovation and tech entrepreneurship in Jordan and the region."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "Empowering student programmers and technical talents through a hands-on work environment that includes developing projects and digital platforms under Bitwreckers, delivering advanced software solutions to companies and organizations, and promoting technical innovation and digital entrepreneurship. We focus on transforming creative ideas into applicable digital products while enhancing practical experience and technical skills to tackle real market challenges."
+    },
+    "pillars": {
+      "title": "Our Pillars",
+      "innovation": {
+        "title": "Innovation",
+        "description": "Pushing boundaries with cutting-edge technology and creative solutions."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "Delivering exceptional quality in every project we undertake."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "Working together to achieve extraordinary results."
+      },
+      "growth": {
+        "title": "Growth",
+        "description": "Continuous learning and development for ourselves and our clients."
+      }
+    },
+    "team": {
+      "title": "Our Team",
+      "ceo": "CEO & Founder",
+      "cto": "CTO & Tech Lead",
+      "mediaLead": "Media & Design Lead",
+      "prLead": "PR & Communications",
+      "seniorDev": "Senior Developer",
+      "devops": "DevOps Engineer"
+    },
+    "values": {
+      "title": "Values & Culture",
+      "subtitle": "Our core values shape everything we do, from how we work together to how we serve our clients.",
+      "innovation": {
+        "title": "Innovation",
+        "description": "Constantly exploring new technologies and approaches"
+      },
+      "transparency": {
+        "title": "Transparency",
+        "description": "Open communication and honest collaboration"
+      },
+      "teamSpirit": {
+        "title": "Team Spirit",
+        "description": "Supporting each other to achieve common goals"
+      },
+      "growth": {
+        "title": "Growth",
+        "description": "Personal and professional development for all"
+      }
+    },
+    "cta": {
+      "title": "Ready to innovate with us?",
+      "subtitle": "Join us on this exciting journey of innovation and growth. Let's create something extraordinary together.",
+      "contactUs": "Contact Us",
+      "joinTeam": "Join Our Team"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "We design, build, and scale innovative digital products tailored to your needs",
+    "learnMore": "Learn More",
+    "whatWeOffer": "What We Offer",
+    "categories": {
+      "webApps": "Web Applications",
+      "mobile": "Mobile Apps",
+      "aiMl": "AI & ML",
+      "cloud": "Cloud & DevOps"
+    },
+    "scrollToExplore": "Scroll to explore",
+    "cta": {
+      "title": "Let's build something amazing together",
+      "subtitle": "Ready to transform your ideas into reality?",
+      "startProject": "Start Your Project",
+      "readyToStart": "Ready to Start?"
+    },
+    "stats": {
+      "projectsDelivered": "Projects Delivered",
+      "responseTime": "Response Time",
+      "clientSatisfaction": "Client Satisfaction"
+    },
+    "howWeWork": {
+      "title": "How We Work",
+      "research": {
+        "title": "Research & Strategy",
+        "description": "We analyze your needs and create a comprehensive development strategy."
+      },
+      "design": {
+        "title": "Design & Prototype",
+        "description": "Our designers create stunning mockups and interactive prototypes."
+      },
+      "development": {
+        "title": "Development",
+        "description": "Expert developers bring your vision to life with clean, efficient code."
+      },
+      "testing": {
+        "title": "Testing & Launch",
+        "description": "We thoroughly test your solution and deploy it with confidence."
+      }
+    },
+    "webDevelopment": {
+      "title": "Web Development",
+      "description": "Modern, responsive web applications built with cutting-edge technologies and best practices."
+    },
+    "mobileApps": {
+      "title": "Mobile Apps",
+      "description": "Native and cross-platform mobile applications for iOS and Android platforms."
+    },
+    "aiAutomation": {
+      "title": "AI & Automation",
+      "description": "Intelligent solutions that streamline processes and enhance user experiences."
+    },
+    "cloudDevops": {
+      "title": "Cloud & DevOps",
+      "description": "Scalable cloud infrastructure and automated deployment pipelines."
+    },
+    "uiUxDesign": {
+      "title": "UI/UX Design",
+      "description": "Beautiful, intuitive interfaces that delight users and drive engagement."
+    },
+    "techConsulting": {
+      "title": "Tech Consulting",
+      "description": "Strategic technology guidance to help your business grow and innovate."
+    },
+    "web": {
+      "title": "Web Development",
+      "subtitle": "Building modern, scalable, and high-performance web applications that drive your business forward.",
+      "technologiesTitle": "Technologies We Use",
+      "technologiesSubtitle": "Cutting-edge tools and frameworks for exceptional web development",
+      "featuresTitle": "What We Deliver",
+      "featuresSubtitle": "Comprehensive web solutions tailored to your business needs",
+      "responsiveTitle": "Responsive Design",
+      "responsiveDescription": "Perfect display across all devices and screen sizes",
+      "performanceTitle": "High Performance",
+      "performanceDescription": "Optimized for speed and efficiency with modern techniques",
+      "securityTitle": "Security First",
+      "securityDescription": "Built with security best practices and data protection",
+      "scalabilityTitle": "Scalable Architecture",
+      "scalabilityDescription": "Designed to grow with your business needs",
+      "teamTitle": "Our Web Development Team",
+      "teamSubtitle": "Expert developers dedicated to creating exceptional web experiences",
+      "processTitle": "Our Development Process",
+      "processSubtitle": "A systematic approach to delivering outstanding web solutions",
+      "analysisTitle": "Requirements Analysis",
+      "analysisDescription": "Understanding your business goals and technical requirements",
+      "designTitle": "System Design",
+      "designDescription": "Creating robust architecture and technical specifications",
+      "developmentTitle": "Development & Testing",
+      "developmentDescription": "Building and thoroughly testing your web application",
+      "testingTitle": "Deployment & Support",
+      "testingDescription": "Launching your application and providing ongoing support",
+      "ctaTitle": "Ready to Build Your Web Application?",
+      "ctaSubtitle": "Let's create something amazing together",
+      "startProject": "Start Your Project",
+      "joinTeam": "Join Our Team"
+    },
+    "mobile": {
+      "title": "Mobile Development",
+      "subtitle": "Creating powerful, user-friendly mobile applications that reach your audience wherever they are.",
+      "technologiesTitle": "Mobile Technologies",
+      "technologiesSubtitle": "Advanced frameworks and tools for cross-platform mobile development",
+      "featuresTitle": "Mobile Excellence",
+      "featuresSubtitle": "Comprehensive mobile solutions for iOS and Android platforms",
+      "crossPlatformTitle": "Cross-Platform Development",
+      "crossPlatformDescription": "Single codebase for both iOS and Android platforms",
+      "performanceTitle": "Native Performance",
+      "performanceDescription": "Optimized for smooth performance and native feel",
+      "securityTitle": "Secure Applications",
+      "securityDescription": "Built with mobile security best practices",
+      "integrationTitle": "Backend Integration",
+      "integrationDescription": "Seamless connection with your existing systems",
+      "teamTitle": "Our Mobile Development Team",
+      "teamSubtitle": "Flutter experts creating beautiful and functional mobile apps",
+      "processTitle": "Mobile Development Process",
+      "processSubtitle": "From concept to app store deployment",
+      "planningTitle": "App Planning",
+      "planningDescription": "Defining features, user flows, and technical requirements",
+      "designTitle": "UI/UX Design",
+      "designDescription": "Creating intuitive and engaging user interfaces",
+      "developmentTitle": "Development",
+      "developmentDescription": "Building your app with Flutter and modern practices",
+      "deploymentTitle": "Testing & Deployment",
+      "deploymentDescription": "Quality assurance and app store submission",
+      "ctaTitle": "Ready to Build Your Mobile App?",
+      "ctaSubtitle": "Transform your idea into a powerful mobile application",
+      "startProject": "Start Your Project",
+      "joinTeam": "Join Our Team"
+    },
+    "uiux": {
+      "title": "UI/UX Design",
+      "subtitle": "Crafting beautiful, intuitive user experiences that engage and delight your users.",
+      "technologiesTitle": "Design Tools",
+      "technologiesSubtitle": "Professional design tools for creating exceptional user experiences",
+      "featuresTitle": "Design Excellence",
+      "featuresSubtitle": "User-centered design solutions that drive engagement and conversion",
+      "userCenteredTitle": "User-Centered Design",
+      "userCenteredDescription": "Designs based on real user needs and behaviors",
+      "visualDesignTitle": "Visual Design",
+      "visualDesignDescription": "Beautiful, consistent visual elements and branding",
+      "interactionTitle": "Interactive Design",
+      "interactionDescription": "Intuitive interactions and smooth user flows",
+      "responsiveTitle": "Responsive Design",
+      "responsiveDescription": "Perfect experience across all devices and platforms",
+      "teamTitle": "Our UI/UX Team",
+      "teamSubtitle": "Creative designers focused on user experience excellence",
+      "processTitle": "Design Process",
+      "processSubtitle": "A user-centered approach to creating exceptional designs",
+      "researchTitle": "User Research",
+      "researchDescription": "Understanding your users and their needs",
+      "wireframingTitle": "Wireframing",
+      "wireframingDescription": "Creating the structure and layout of your interface",
+      "designTitle": "Visual Design",
+      "designDescription": "Bringing your interface to life with beautiful visuals",
+      "testingTitle": "User Testing",
+      "testingDescription": "Validating designs with real users and feedback",
+      "ctaTitle": "Ready to Design Something Amazing?",
+      "ctaSubtitle": "Let's create user experiences that make a difference",
+      "startProject": "Start Your Project",
+      "joinTeam": "Join Our Team"
+    }
+  },
+  "contact": {
+    "title": "Let's Build Something Together",
+    "subtitle": "Whether you're a company, media partner, or student – we'd love to hear from you.",
+    "tabs": {
+      "companies": "Companies",
+      "partnerships": "Partnerships",
+      "media": "Media",
+      "student": "Student"
+    },
+    "forms": {
+      "companyName": "Company Name",
+      "officialEmail": "Official Email",
+      "serviceType": "Service Type",
+      "organizationName": "Organization Name",
+      "contactRepresentative": "Contact Representative",
+      "email": "Email",
+      "collaborationIdea": "Collaboration Idea",
+      "name": "Name",
+      "coverageType": "Coverage Type",
+      "message": "Message",
+      "university": "University",
+      "reasonForContact": "Reason for Contact",
+      "tellUsAboutProject": "Tell us about your project"
+    },
+    "serviceTypes": {
+      "webDevelopment": "Web Development",
+      "mobileApp": "Mobile App",
+      "aiSolutions": "AI Solutions",
+      "consulting": "Consulting",
+      "other": "Other"
+    },
+    "coverageTypes": {
+      "article": "Article",
+      "interview": "Interview",
+      "news": "News",
+      "feature": "Feature",
+      "other": "Other"
+    },
+    "reasons": {
+      "internship": "Internship",
+      "volunteering": "Volunteering",
+      "question": "Question",
+      "projectCollaboration": "Project Collaboration",
+      "other": "Other"
+    },
+    "buttons": {
+      "sendMessage": "Send Message",
+      "sending": "Sending...",
+      "scheduleCall": "Schedule a Call"
+    },
+    "contactInfo": {
+      "getInTouch": "Get in Touch",
+      "location": "Location",
+      "phone": "Phone",
+      "workingHours": "Working Hours",
+      "ammanJordan": "Amman, Jordan",
+      "phoneNumber": "+962 79 123 4567",
+      "workingHoursText": "24 Hours"
+    },
+    "cta": {
+      "title": "Have a project in mind?",
+      "subtitle": "Let's make it happen."
+    },
+    "map": {
+      "comingSoon": "Interactive Map Coming Soon"
+    }
+  },
+  "footer": {
+    "description": "A student-led programming company driven by young talents in Jordan and the MENA region",
+    "company": {
+      "title": "Company",
+      "about": "About",
+      "careers": "Careers",
+      "blog": "Blog",
+      "press": "Press"
+    },
+    "services": {
+      "title": "Services",
+      "webDevelopment": "Web Development",
+      "mobileDevelopment": "Mobile Development",
+      "consulting": "Consulting"
+    },
+    "resources": {
+      "title": "Resources",
+      "documentation": "Documentation",
+      "tutorials": "Tutorials",
+      "api": "API",
+      "support": "Support"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "cookies": "Cookies"
+    },
+    "social": {
+      "followUs": "Follow Us",
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "youtube": "YouTube"
+    },
+    "copyright": "All rights reserved © 2024 Bitwreckers"
+  },
+  "portfolio": {
+    "title": "Our Work Speaks for Itself",
+    "subtitle": "A showcase of projects we built with passion, innovation, and impact.",
+    "categories": {
+      "all": "All",
+      "web": "Web Development",
+      "mobile": "Mobile Apps",
+      "ai": "AI / Data",
+      "design": "Design & Branding"
+    },
+    "projectPreview": "Project Preview",
+    "viewDetails": "View Details",
+    "technologiesUsed": "Technologies Used",
+    "impactResults": "Impact & Results",
+    "viewLive": "View Live",
+    "caseStudy": "Case Study",
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "sarahQuote": "Bitwreckers transformed our vision into a stunning reality. Their attention to detail and innovative approach exceeded our expectations.",
+      "michaelQuote": "The AI solution they built for us revolutionized our data processing capabilities. Incredible results!",
+      "emilyQuote": "From concept to launch, Bitwreckers delivered a world-class mobile app that our users love."
+    },
+    "cta": {
+      "title": "Have a project in mind?",
+      "subtitle": "Let's build it together.",
+      "startProject": "Start Your Project"
+    }
+  },
+  "productsPage": {
+    "title": "Our Products & Platforms",
+    "subtitle": "Discover the innovative tools and platforms we've built to empower student developers",
+    "techStack": "Tech Stack:",
+    "viewDetails": "View Details",
+    "status": {
+      "live": "Live",
+      "beta": "Beta",
+      "development": "Development",
+      "planning": "Planning",
+      "alpha": "Alpha"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to the most common questions about our services and products",
+    "contact_title": "Didn't find an answer to your question?",
+    "contact_subtitle": "Our team is always available to answer your inquiries and provide assistance",
+    "contact_button": "Contact Us",
+    "lms": {
+      "best_platform": "What is the best LMS platform or software?"
+    },
+    "student_systems": "Do you provide student systems?",
+    "technology_services": "What technical services do you offer?",
+    "school_management": "Do you support school management?",
+    "project_steps": "What are the project implementation steps?",
+    "multilanguage_rtl": "Do you support multi-language and RTL?",
+    "training_support": "Do you provide training and support?",
+    "mobile_ios_android": "Do you support iOS and Android?",
+    "ecommerce_support": "Do you support e-commerce?",
+    "ui_ux_identity": "Do you provide UI/UX and identity?",
+    "security_measures": "What security measures are implemented?",
+    "ai_integration": "Do you integrate artificial intelligence?",
+    "quality_assurance": "Do you provide quality assurance?",
+    "education_management": "Do you support education management?",
+    "services_offered": "What services do we offer?",
+    "post_launch_support": "Is there post-launch support?",
+    "project_start": "How do we start the project?",
+    "hosting_server": "Do you support hosting and server?",
+    "maintenance_contracts": "Do you provide maintenance contracts?",
+    "data_migration": "Do you support data migration?",
+    "seo_performance": "Do you provide SEO and performance optimization?",
+    "external_integration": "Do you support integration with external systems?",
+    "previous_work": "Can we see your previous work?",
+    "pricing_payment": "What are your prices and payment methods?",
+    "cms_support": "Do you support content management systems?",
+    "monitoring_alerts": "Do you provide monitoring and alerts?",
+    "school_systems": "Do you support school systems?",
+    "project_duration": "How long does project implementation take?",
+    "lms_sale": "Do you sell LMS?",
+    "development_cost": "What is the development cost?",
+    "electronic_payment": "Do you support electronic payment?",
+    "nda_support": "Do you provide NDA support?",
+    "system_scalability": "Is the system scalable?",
+    "control_panels": "Do you provide control panels?",
+    "api_provision": "Do you provide APIs?",
+    "delivery_documentation": "Do you provide delivery and documentation?",
+    "client_cloud": "Do you support client cloud deployment?",
+    "operating_contracts": "Do you provide operating contracts for schools and institutes?",
+    "answers": {
+      "lms_best_platform": "We develop custom LMS platforms using the latest technologies like React and Node.js, with full support for interactive learning and content management.",
+      "student_systems": "Yes, we provide comprehensive student management systems including enrollment, academic tracking, grades, and reports.",
+      "technology_services": "We offer web development, mobile applications, content management systems, external system integration, and cloud solutions.",
+      "school_management": "Yes, we develop comprehensive school management systems including student, teacher, curriculum, attendance, and absence management.",
+      "project_steps": "We start with requirements analysis, then design and development, followed by testing and training, and finally deployment and ongoing support.",
+      "multilanguage_rtl": "Yes, all our products fully support multiple languages and right-to-left (RTL) writing.",
+      "training_support": "We provide comprehensive user training and 24/7 technical support, plus detailed documentation and user guides.",
+      "mobile_ios_android": "Yes, we develop native applications for both iOS and Android using the latest technologies like React Native and Flutter.",
+      "ecommerce_support": "We provide integrated e-commerce solutions including product management, orders, electronic payment, and marketing.",
+      "ui_ux_identity": "Yes, our design team provides integrated UI/UX services and visual identity development for projects.",
+      "security_measures": "We apply the highest security standards including data encryption, multi-factor authentication, and protection against cyber attacks.",
+      "ai_integration": "We integrate artificial intelligence into our solutions to provide smart user experience and advanced analytics.",
+      "quality_assurance": "We apply comprehensive testing at all development stages to ensure the quality of the final product.",
+      "education_management": "We provide integrated solutions for educational institution management including student, teacher, curriculum, and assessment management.",
+      "services_offered": "We offer web development, mobile applications, content management systems, design, integration, and technical consulting.",
+      "post_launch_support": "Yes, we provide ongoing technical support after launch including maintenance, updates, and technical support.",
+      "project_start": "We start with an exploratory meeting to understand your requirements, then provide a detailed plan and project timeline.",
+      "hosting_server": "We provide hosting and server management services with guaranteed high performance, security, and uptime protection.",
+      "maintenance_contracts": "Yes, we provide comprehensive maintenance contracts including updates, security, and technical support.",
+      "data_migration": "We provide secure data migration services from old systems to new ones with guaranteed data integrity.",
+      "seo_performance": "We apply SEO best practices and performance optimization to ensure fast loading and good search engine ranking.",
+      "external_integration": "We provide integration with all external systems such as payment systems, customer relationship management, and educational systems.",
+      "previous_work": "You can review our work portfolio on the Portfolio page to see the projects we have successfully completed.",
+      "pricing_payment": "Our prices are competitive and tiered based on project size. We accept electronic payment and bank transfers.",
+      "cms_support": "We develop custom content management systems that are easy to use with advanced administrative interfaces.",
+      "monitoring_alerts": "We provide advanced monitoring systems with real-time alerts to protect sites from technical issues.",
+      "school_systems": "We develop comprehensive school systems including student, teacher, curriculum, assessment, and grade management.",
+      "project_duration": "Duration depends on project size, typically 2-6 months for medium projects, and can reach a year for large projects.",
+      "lms_sale": "We develop custom LMS platforms according to your needs, and we don't have a ready-made product for sale.",
+      "development_cost": "Cost depends on project requirements, we provide detailed quotes after studying the requirements.",
+      "electronic_payment": "Yes, we integrate all local and international electronic payment methods in our projects.",
+      "nda_support": "Yes, we respect complete confidentiality and sign non-disclosure agreements to protect your information.",
+      "system_scalability": "All our systems are designed to be scalable to meet your future needs.",
+      "control_panels": "We provide advanced and easy-to-use control panels for managing all aspects of the system.",
+      "api_provision": "Yes, we provide comprehensive and documented APIs for integration with external systems.",
+      "delivery_documentation": "We provide all technical documentation, user guides, and comprehensive training with delivery.",
+      "client_cloud": "We provide secure and reliable cloud solutions with complete infrastructure management.",
+      "operating_contracts": "Yes, we provide comprehensive operating contracts for educational institutions with guaranteed performance and ongoing support."
+    }
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Discover our innovative portfolio of cutting-edge solutions designed to transform industries and empower communities",
+    "viewDetails": "View Details",
+    "underDevelopment": "Under Development",
+    "whyPartnerWithUs": "Why Partner With Us?",
+    "whyPartnerSubtitle": "Join us in building the future of technology with innovative solutions that make a real impact",
+    "provenTrackRecord": "Proven Track Record",
+    "provenTrackDescription": "Successfully delivering innovative solutions across multiple industries",
+    "youthDrivenInnovation": "Youth-Driven Innovation",
+    "youthDrivenDescription": "Fresh perspectives and cutting-edge approaches to problem-solving",
+    "comprehensiveSupport": "Comprehensive Support",
+    "comprehensiveSupportDescription": "End-to-end support from ideation to deployment and maintenance",
+    "futureReadySolutions": "Future-Ready Solutions",
+    "futureReadyDescription": "Building platforms that adapt to tomorrow's technological landscape",
+    "technicalExpertise": "Technical Expertise",
+    "technicalExpertiseDescription": "Access to our experienced development team and cutting-edge technologies",
+    "marketKnowledge": "Market Knowledge",
+    "marketKnowledgeDescription": "Deep understanding of the Arab market and user needs",
+    "innovationFocus": "Innovation Focus",
+    "innovationFocusDescription": "Commitment to creating innovative solutions that make a real impact",
+    "globalReach": "Global Reach",
+    "globalReachDescription": "Platforms designed to scale globally while maintaining local relevance",
+    "readyToPartner": "Ready to Partner With Us?",
+    "readyToPartnerSubtitle": "Let's discuss how we can work together to bring your vision to life",
+    "bookConsultation": "Book a Consultation",
+    "joinOurTeam": "Join Our Team"
+  },
+  "community": {
+    "title": "Connect With Us",
+    "subtitle": "Join our vibrant community of innovators, developers, and tech enthusiasts. Connect, collaborate, and grow together in the world of technology.",
+    "joinCommunity": "Join Our Community",
+    "communityMembers": "Community Members",
+    "activeContributors": "Active Contributors",
+    "projectsShared": "Projects Shared",
+    "knowledgeExchanged": "Knowledge Exchanged",
+    "whatsappTitle": "Join Our WhatsApp Community",
+    "whatsappDescription": "Connect with fellow developers, share ideas, get help, and stay updated with our latest projects and announcements.",
+    "joinWhatsappGroup": "Join WhatsApp Group",
+    "socialMediaTitle": "Follow Us on Social Media",
+    "socialMediaDescription": "Stay connected with us across all platforms. Get updates, insights, and join the conversation.",
+    "facebook": "Facebook",
+    "facebookDescription": "Follow us for updates and announcements",
+    "twitter": "X (Twitter)",
+    "twitterDescription": "Get the latest tech news and insights",
+    "instagram": "Instagram",
+    "instagramDescription": "Follow our visual journey and behind-the-scenes content",
+    "telegram": "Telegram",
+    "telegramDescription": "Join our Telegram channel for discussions",
+    "linkedin": "LinkedIn",
+    "linkedinDescription": "Connect with us professionally",
+    "github": "GitHub",
+    "githubDescription": "Explore our open source projects",
+    "followBitwreckers": "Follow @bitwreckers",
+    "ctaTitle": "Ready to Join Our Community?",
+    "ctaDescription": "Connect with like-minded individuals, share your projects, and be part of the future of technology.",
+    "joinNow": "Join Now",
+    "browseEvents": "Browse Events",
+    "contactUs": "Contact Us"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "Your privacy is important to us. This policy explains how we collect, use, and protect your information.",
+    "lastUpdated": "Last updated",
+    "informationWeCollect": {
+      "title": "Information We Collect",
+      "content": "We collect information you provide directly to us, such as when you create an account, contact us, or use our services. This may include your name, email address, phone number, and project details."
+    },
+    "howWeUse": {
+      "title": "How We Use Your Information",
+      "content": "We use the information we collect to provide, maintain, and improve our services, communicate with you, process transactions, and send you technical notices and support messages."
+    },
+    "informationSharing": {
+      "title": "Information Sharing",
+      "content": "We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy or as required by law."
+    },
+    "dataSecurity": {
+      "title": "Data Security",
+      "content": "We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
+    },
+    "yourRights": {
+      "title": "Your Rights",
+      "content": "You have the right to access, update, or delete your personal information. You may also opt out of certain communications from us at any time."
+    },
+    "questionsTitle": "Questions About Privacy?",
+    "questionsSubtitle": "If you have any questions about this Privacy Policy, please contact us.",
+    "contactUs": "Contact Us",
+    "emailUs": "Email Us"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "subtitle": "Please read these terms of service carefully before using our services.",
+    "lastUpdated": "Last updated",
+    "acceptance": {
+      "title": "Acceptance of Terms",
+      "content": "By accessing and using Bitwreckers services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service."
+    },
+    "useLicense": {
+      "title": "Use License",
+      "content": "Permission is granted to temporarily use Bitwreckers services for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not modify or copy the materials."
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "content": "The materials on Bitwreckers website are provided on an \"as is\" basis. Bitwreckers makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including without limitation, implied warranties or conditions of merchantability."
+    },
+    "limitations": {
+      "title": "Limitations",
+      "content": "In no event shall Bitwreckers or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Bitwreckers website."
+    },
+    "accuracy": {
+      "title": "Accuracy of Materials",
+      "content": "The materials appearing on Bitwreckers website could include technical, typographical, or photographic errors. Bitwreckers does not warrant that any of the materials on its website are accurate, complete, or current."
+    },
+    "questionsTitle": "Questions About Terms?",
+    "questionsSubtitle": "If you have any questions about these Terms of Service, please contact us.",
+    "contactUs": "Contact Us",
+    "emailUs": "Email Us"
+  }
+}

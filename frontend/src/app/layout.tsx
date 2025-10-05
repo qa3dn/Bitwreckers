@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   authors: [{ name: 'Bitwreckers Team' }],
   creator: 'Bitwreckers',
   publisher: 'Bitwreckers',
+  icons: {
+    icon: '/bit-l.png',
+    shortcut: '/bit-l.png',
+    apple: '/bit-l.png',
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -72,13 +77,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} dir="ltr">
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/bit-l.png" type="image/png" />
+        <link rel="shortcut icon" href="/bit-l.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/bit-l.png" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#1e3a8a" />
+        <meta name="theme-color" content="#6B2D73" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet" />
       </head>
       <body className={inter.className}>
         <div id="root" className="min-h-screen flex flex-col">

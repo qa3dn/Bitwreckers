@@ -1,210 +1,140 @@
-# Bitwreckers Website
+# Bitwreckers Development Environment
 
-A student-led programming company website built with Next.js frontend and FastAPI backend.
+## 🚀 Quick Start
 
-## 🚀 Features
+### Windows
+```bash
+# Double-click on start-all.bat
+# OR run in command prompt:
+start-all.bat
+```
 
-- **Frontend (Next.js)**
-  - Modern React with TypeScript
-  - Tailwind CSS for styling
-  - Framer Motion for animations
-  - Responsive design
-  - Internationalization (Arabic/English)
-  - SEO optimized
+### Linux/Mac
+```bash
+# Make executable and run
+chmod +x start-all.sh
+./start-all.sh
+```
 
-- **Backend (FastAPI)**
-  - Fast API with Python
-  - PostgreSQL database
-  - JWT authentication
-  - File uploads
-  - Email functionality
-  - Auto-generated API docs
+### Cross-platform (Node.js)
+```bash
+# Install dependencies (if needed)
+npm install
+
+# Start all services
+npm start
+# OR
+node start-all.js
+```
+
+## 🎯 What This Script Does
+
+### 1. **Port Management**
+- Automatically finds available port for backend (starting from 3002)
+- Updates environment files with correct backend URL
+- Handles port conflicts gracefully
+
+### 2. **Service Startup Order**
+1. **Backend API** (Port 3002+)
+2. **Frontend** (Port 3000)
+3. **Admin Panel** (Port 3001)
+
+### 3. **Environment Configuration**
+- Updates `admin/env.local` with backend URL
+- Updates `frontend/.env.local` with backend URL
+- Ensures all services can communicate
+
+### 4. **Health Monitoring**
+- Waits for backend to be ready before starting frontend
+- Monitors service health
+- Provides real-time logs
+
+## 🌐 Access URLs
+
+After successful startup:
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:3002 (or next available port)
+- **Admin Panel**: http://localhost:3001
+
+## 🛠️ Manual Setup (Alternative)
+
+If you prefer to start services manually:
+
+### 1. Start Backend
+```bash
+cd backend
+npm start
+```
+
+### 2. Start Frontend
+```bash
+cd frontend
+npm run dev
+```
+
+### 3. Start Admin Panel
+```bash
+cd admin
+npm run dev
+```
+
+## 🔧 Troubleshooting
+
+### Port Already in Use
+The script automatically finds available ports. If you still get port conflicts:
+1. Stop all running Node.js processes
+2. Restart the script
+
+### Environment Variables Not Updated
+1. Check if `admin/env.local` and `frontend/.env.local` exist
+2. Manually add `NEXT_PUBLIC_BACKEND_URL=http://localhost:PORT`
+
+### Services Not Starting
+1. Check if all dependencies are installed (`npm install` in each directory)
+2. Check Node.js version (requires 14+)
+3. Check console output for specific errors
 
 ## 📁 Project Structure
 
 ```
-bit2/
-├── frontend/                 # Next.js frontend
-│   ├── src/
-│   │   ├── app/             # App router
-│   │   ├── components/      # React components
-│   │   └── styles/          # CSS styles
-│   ├── locales/             # Translation files
-│   └── package.json
-├── backend/                  # FastAPI backend
-│   ├── app/
-│   │   ├── api/             # API endpoints
-│   │   ├── core/            # Core functionality
-│   │   ├── models/          # Database models
-│   │   └── schemas/         # Pydantic schemas
-│   ├── main.py              # FastAPI app
-│   └── requirements.txt
-└── README.md
+bitwreckers/
+├── start-all.js          # Main startup script
+├── start-all.bat         # Windows batch file
+├── start-all.sh          # Linux/Mac shell script
+├── package.json          # Script dependencies
+├── README.md             # This file
+├── frontend/             # Next.js frontend
+├── admin/                # Next.js admin panel
+└── backend/              # Express.js backend
 ```
 
-## 🛠️ Tech Stack
+## 🎉 Features
 
-### Frontend
-- **Framework**: Next.js 14 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **I18n**: Next.js internationalization
-- **Deployment**: Vercel (recommended)
+- ✅ **Automatic Port Detection**: Finds available ports automatically
+- ✅ **Environment Management**: Updates env files automatically
+- ✅ **Health Monitoring**: Waits for services to be ready
+- ✅ **Real-time Logs**: Shows logs from all services
+- ✅ **Graceful Shutdown**: Stops all services with Ctrl+C
+- ✅ **Cross-platform**: Works on Windows, Linux, and Mac
+- ✅ **Error Handling**: Comprehensive error handling and reporting
 
-### Backend
-- **Framework**: FastAPI
-- **Language**: Python 3.11+
-- **Database**: PostgreSQL
-- **ORM**: SQLAlchemy (async)
-- **Authentication**: JWT
-- **Documentation**: Auto-generated OpenAPI/Swagger
-- **Deployment**: Docker, Railway, or Heroku
+## 🚨 Important Notes
 
-## 🚀 Quick Start
-
-### Frontend Development
-
-1. **Navigate to frontend directory**
-   ```bash
-   cd frontend
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Run development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open browser**
-   ```
-   http://localhost:3000
-   ```
-
-### Backend Development
-
-1. **Navigate to backend directory**
-   ```bash
-   cd backend
-   ```
-
-2. **Create virtual environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Set up environment variables**
-   ```bash
-   cp env.example .env
-   # Edit .env with your configuration
-   ```
-
-5. **Run development server**
-   ```bash
-   python main.py
-   # Or: uvicorn main:app --reload
-   ```
-
-6. **Open API docs**
-   ```
-   http://localhost:8000/docs
-   ```
-
-## 🐳 Docker Deployment
-
-### Backend with Docker Compose
-
-```bash
-cd backend
-docker-compose up -d
-```
-
-This will start:
-- FastAPI server on port 8000
-- PostgreSQL database on port 5432
-- Redis on port 6379
-
-## 📚 API Documentation
-
-Once the backend is running, visit:
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
-- **Health Check**: http://localhost:8000/health
-
-## 🌐 Internationalization
-
-The frontend supports both Arabic and English:
-- Arabic: RTL layout with Cairo font
-- English: LTR layout with Inter font
-- Automatic language detection
-- Easy translation management
-
-## 🔧 Development Commands
-
-### Frontend
-```bash
-cd frontend
-npm run dev          # Development server
-npm run build        # Production build
-npm run start        # Production server
-npm run lint         # ESLint
-npm run type-check   # TypeScript check
-```
-
-### Backend
-```bash
-cd backend
-make run             # Development server
-make test            # Run tests
-make format          # Format code
-make lint            # Lint code
-make docker-run      # Run with Docker
-```
-
-## 📝 Environment Variables
-
-### Frontend (.env.local)
-```env
-NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
-```
-
-### Backend (.env)
-```env
-DATABASE_URL=postgresql://user:password@localhost/bitwreckers
-SECRET_KEY=your-super-secret-key-here
-CORS_ORIGINS=["http://localhost:3000"]
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+1. **Node.js Required**: Make sure Node.js 14+ is installed
+2. **Dependencies**: Run `npm install` in each directory if needed
+3. **Ports**: The script will find available ports automatically
+4. **Environment**: Environment files are updated automatically
+5. **Shutdown**: Use Ctrl+C to stop all services gracefully
 
 ## 🆘 Support
 
-For support, email support@bitwreckers.com or join our Discord server.
+If you encounter issues:
+1. Check the console output for error messages
+2. Ensure all dependencies are installed
+3. Check if ports are available
+4. Verify Node.js version compatibility
 
-## 🙏 Acknowledgments
+---
 
-- Next.js team for the amazing framework
-- FastAPI team for the high-performance API framework
-- Tailwind CSS for the utility-first CSS framework
-- Framer Motion for the smooth animations
+**Happy Coding! 🚀**
+
