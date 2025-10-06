@@ -201,6 +201,8 @@ const ParticlesAnimation = () => {
       }
 
       createBlocks() {
+        if (!canvas) return;
+        
         this.blocks = [];
         const patternHeight = this.pattern.length;
         const patternWidth = this.pattern[0].length;
@@ -269,6 +271,8 @@ const ParticlesAnimation = () => {
       wobbleSpeed: number;
 
       constructor() {
+        if (!canvas) return;
+        
         this.x = Math.random() * canvas.width;
         this.y = canvas.height + 20;
         this.size = Math.random() * 8 + 4;
@@ -283,6 +287,8 @@ const ParticlesAnimation = () => {
       }
 
       update() {
+        if (!canvas) return;
+        
         this.y += this.speedY;
         this.wobble += this.wobbleSpeed;
         this.x += Math.sin(this.wobble) * 0.5;
@@ -317,6 +323,8 @@ const ParticlesAnimation = () => {
 
     // Create initial pattern
     const createNewPattern = () => {
+      if (!canvas) return;
+      
       const x = canvas.width / 2 + (Math.random() - 0.5) * 300;
       const y = canvas.height / 2 + (Math.random() - 0.5) * 200;
       patterns.push(new GridPattern(x, y));
