@@ -29,6 +29,7 @@ interface BlogPost {
   published_at: string;
   view_count: number;
   like_count: number;
+  share_count: number;
   meta_description_en?: string;
   meta_description_ar?: string;
 }
@@ -157,7 +158,7 @@ export default function BlogPostPage() {
         
         await supabase
           .from('blog_posts')
-          .update({ share_count: post.share_count + 1 })
+          .update({ share_count: (post.share_count || 0) + 1 })
           .eq('id', post.id);
           
         setShareCount(prev => prev + 1);
