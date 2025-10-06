@@ -76,6 +76,7 @@ interface JoinRequest {
   notes?: string;
   admin_notes?: string;
   responded_at?: string;
+  deleted_at?: string;
   created_at: string;
   updated_at?: string;
 }
@@ -99,6 +100,7 @@ interface ConsultationRequest {
   notes?: string;
   admin_notes?: string;
   responded_at?: string;
+  deleted_at?: string;
   created_at: string;
   updated_at?: string;
 }

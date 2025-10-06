@@ -64,7 +64,7 @@ export class Encryption {
       decipher.setAAD(salt);
       decipher.setAuthTag(tag);
       
-      let decrypted = decipher.update(encrypted, null, 'utf8');
+      let decrypted = decipher.update(encrypted, undefined, 'utf8');
       decrypted += decipher.final('utf8');
       
       return decrypted;

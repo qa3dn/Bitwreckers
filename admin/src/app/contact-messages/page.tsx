@@ -40,7 +40,6 @@ import {
   FileImage,
   X
 } from 'lucide-react';
-import NoSSR from '@/components/NoSSR';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import * as XLSX from 'xlsx';
@@ -58,6 +57,7 @@ interface ContactMessage {
   priority: 'low' | 'medium' | 'high' | 'urgent';
   admin_notes?: string;
   responded_at?: string;
+  deleted_at?: string;
   created_at: string;
   updated_at: string;
 }
