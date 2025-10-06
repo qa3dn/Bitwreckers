@@ -4,11 +4,23 @@ import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react';
 import useTranslation from '../../hooks/useTranslation';
 
+interface Project {
+  id: number;
+  title: string;
+  category: string;
+  image: string;
+  description: string;
+  technologies: string[];
+  impact: string;
+  liveUrl: string;
+  caseStudyUrl: string;
+}
+
 export default function PortfolioPage() {
   const { scrollYProgress } = useScroll();
   const progressWidth = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
   const [activeCategory, setActiveCategory] = useState('all');
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const { t, isRTL } = useTranslation();
 
@@ -136,7 +148,7 @@ export default function PortfolioPage() {
     return () => clearInterval(interval);
   }, []);
 
-  const openProjectModal = (project) => {
+  const openProjectModal = (project: Project) => {
     setSelectedProject(project);
   };
 
