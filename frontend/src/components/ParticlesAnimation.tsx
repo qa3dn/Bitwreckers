@@ -102,6 +102,7 @@ const ParticlesAnimation = () => {
 
       draw() {
         if (this.delay > 0 || this.alpha < 0.01) return;
+        if (!ctx) return;
 
         ctx.save();
         ctx.globalAlpha = this.alpha;
@@ -293,6 +294,8 @@ const ParticlesAnimation = () => {
       }
 
       draw() {
+        if (!ctx) return;
+        
         ctx.save();
         ctx.globalAlpha = this.alpha;
         ctx.fillStyle = this.color;
@@ -323,6 +326,8 @@ const ParticlesAnimation = () => {
 
     // Animation loop
     const animate = () => {
+      if (!ctx) return;
+      
       time += 0.016; // 60fps
 
       // Clear with fade effect
