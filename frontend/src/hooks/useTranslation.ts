@@ -23,8 +23,14 @@ const useTranslation = () => {
         console.error('Failed to load translations:', error);
         // Fallback to English if Arabic fails
         if (language === 'ar') {
-          const fallbackModule = await import(`../locales/en.json`);
-          setTranslations(fallbackModule.default);
+          try {
+            const fallbackModule = await import(`../locales/en.json`);
+            console.log('Fallback to English translations');
+            setTranslations(fallbackModule.default);
+          } catch (fallbackError) {
+            console.error('Failed to load fallback translations:', fallbackError);
+            setTranslations({});
+          }
         }
       }
     };
