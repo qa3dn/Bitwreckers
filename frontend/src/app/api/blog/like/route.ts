@@ -151,7 +151,7 @@ export async function GET(request: NextRequest) {
         .eq('interaction_type', 'like')
         .single();
 
-      hasLiked = !userError && userLike;
+      hasLiked = !userError && !!userLike;
     }
 
     return NextResponse.json({
