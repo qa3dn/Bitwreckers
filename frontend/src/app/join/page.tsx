@@ -55,12 +55,22 @@ export default function JoinPage() {
   };
 
   const handleCheckboxChange = (field: string, value: string) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: prev[field].includes(value) 
-        ? prev[field].filter(item => item !== value)
-        : [...prev[field], value]
-    }));
+    setFormData(prev => {
+      const key = field as keyof typeof prev;
+      const currentValue = prev[key];
+      
+      // Check if current value is an array before using includes/filter
+      if (Array.isArray(currentValue)) {
+        const updatedValue = currentValue.includes(value)
+          ? currentValue.filter(item => item !== value)
+          : [...currentValue, value];
+        
+        return { ...prev, [key]: updatedValue };
+      }
+      
+      // If not an array, return data without modification
+      return prev;
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
