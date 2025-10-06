@@ -33,7 +33,7 @@ const Footer = () => {
       { name: 'Blog', href: '/blog' },
       { name: t('footer.resources.tutorials'), href: '/tutorials' },
       { name: 'FAQ', href: '/faq' },
-      { name: t('footer.resources.support'), href: '/support' },
+      { name: t('footer.resources.support'), href: '/contact' },
     ],
     legal: [
         { name: t('footer.legal.privacy'), href: '/privacy' },
