@@ -762,7 +762,10 @@
       "api_provision": "هل تقدمون APIs؟",
       "delivery_documentation": "هل تقدمون التسليم والوثائق؟",
       "client_cloud": "هل تدعمون نشر سحابة العميل؟",
-      "operating_contracts": "هل تقدمون عقود تشغيل للمدارس والمعاهد؟"
+      "operating_contracts": "هل تقدمون عقود تشغيل للمدارس والمعاهد؟",
+      "contact_title": "هل لديك أسئلة أخرى؟",
+      "contact_subtitle": "تواصل معنا للحصول على إجابات شاملة",
+      "contact_button": "تواصل معنا"
     },
     "answers": {
       "lms_best_platform": "نطور منصات تعليمية مخصصة باستخدام أحدث التقنيات مثل React و Node.js، مع دعم كامل للتعلم التفاعلي وإدارة المحتوى.",

@@ -17,7 +17,6 @@ const useTranslation = () => {
     const loadTranslations = async () => {
       try {
         const translationModule = await import(`../locales/${language}.json`);
-        console.log(`Loaded translations for ${language}:`, translationModule.default);
         setTranslations(translationModule.default);
       } catch (error) {
         console.error('Failed to load translations:', error);
@@ -25,7 +24,6 @@ const useTranslation = () => {
         if (language === 'ar') {
           try {
             const fallbackModule = await import(`../locales/en.json`);
-            console.log('Fallback to English translations');
             setTranslations(fallbackModule.default);
           } catch (fallbackError) {
             console.error('Failed to load fallback translations:', fallbackError);
@@ -49,7 +47,6 @@ const useTranslation = () => {
       if (value && typeof value === 'object' && k in value) {
         value = value[k];
       } else {
-        console.log(`Translation not found for key: ${key}, language: ${language}`);
         return key; // Return key if translation not found
       }
     }
