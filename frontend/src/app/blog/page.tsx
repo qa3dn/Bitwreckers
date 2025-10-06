@@ -18,6 +18,8 @@ interface BlogPost {
   excerpt_en: string;
   excerpt_ar: string;
   featured_image_url?: string;
+  featured_image_alt_en?: string;
+  featured_image_alt_ar?: string;
   category_en: string;
   category_ar: string;
   tags_en: string[];
@@ -27,6 +29,7 @@ interface BlogPost {
   published_at: string;
   view_count: number;
   like_count: number;
+  share_count: number;
   is_featured: boolean;
 }
 
