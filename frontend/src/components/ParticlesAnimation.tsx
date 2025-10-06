@@ -261,14 +261,14 @@ const ParticlesAnimation = () => {
 
     // Floating pixel debris
     class FloatingPixel {
-      x: number;
-      y: number;
-      size: number;
-      color: string;
-      alpha: number;
-      speedY: number;
-      wobble: number;
-      wobbleSpeed: number;
+      x: number = 0;
+      y: number = 0;
+      size: number = 1;
+      color: string = "#ffffff";
+      alpha: number = 1;
+      speedY: number = 0;
+      wobble: number = 0;
+      wobbleSpeed: number = 0;
 
       constructor() {
         if (!canvas) return;
