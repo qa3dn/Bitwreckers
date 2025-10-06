@@ -100,4 +100,5 @@ const useTranslation = () => {
   };
 };
 
+export { useTranslation };
 export default useTranslation;
