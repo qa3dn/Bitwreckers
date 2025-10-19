@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: 'Bitwreckers',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/Logo-icon.png',
         width: 1200,
         height: 630,
         alt: 'Bitwreckers - Student-led Programming Company',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Bitwreckers - Break the Code, Build the Future',
     description: 'A student-led programming company driven by young talents in Jordan and the MENA region',
-    images: ['/og-image.jpg'],
+    images: ['/Logo-icon.png'],
   },
   robots: {
     index: true,
