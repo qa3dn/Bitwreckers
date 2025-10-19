@@ -1,0 +1,27 @@
+{
+  "name": "Bitwreckers - Break the Code, Build the Future",
+  "short_name": "Bitwreckers",
+  "description": "A student-led programming company driven by young talents in Jordan and the MENA region",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f1b",
+  "theme_color": "#6B2D73",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/Logo-icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/Logo-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "technology", "programming"],
+  "lang": "en",
+  "dir": "ltr"
+}
