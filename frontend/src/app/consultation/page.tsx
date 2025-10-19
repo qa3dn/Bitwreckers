@@ -186,7 +186,7 @@ export default function ConsultationPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#b376bf] to-[#d4aad9] bg-clip-text text-transparent mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#b376bf] to-[#d4aad9] bg-clip-text text-transparent mb-4 sm:mb-6 leading-tight"
           >
             {isRTL ? 'تم إرسال طلب الاستشارة بنجاح!' : 'Consultation Request Submitted Successfully!'}
           </motion.h1>
@@ -270,7 +270,7 @@ export default function ConsultationPage() {
           </motion.div>
           
           <motion.h1
-            className="text-5xl md:text-7xl font-black mb-8 bg-gradient-to-r from-[#b376bf] via-[#d4aad9] to-[#2D7363] bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 sm:mb-8 bg-gradient-to-r from-[#b376bf] via-[#d4aad9] to-[#2D7363] bg-clip-text text-transparent leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -279,7 +279,7 @@ export default function ConsultationPage() {
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-[#F8F8F8] max-w-4xl mx-auto leading-relaxed mb-12"
+            className="text-lg sm:text-xl md:text-2xl text-[#F8F8F8] max-w-4xl mx-auto leading-relaxed mb-8 sm:mb-12 px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}

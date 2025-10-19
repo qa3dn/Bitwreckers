@@ -61,14 +61,13 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Link href="/" className="inline-block mb-4">
-                <span className="text-3xl font-bold text-white">
-                  {t('navbar.logo')}
-                </span>
+              <Link href="/" className="inline-block mb-6">
+                <img 
+                  src="/Logo-H-Gray-01.png" 
+                  alt="Bitwreckers Logo" 
+                  className="h-12 sm:h-14 md:h-16 object-contain filter drop-shadow-lg hover:brightness-110 transition-all duration-300"
+                />
               </Link>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                {t('footer.description')}
-              </p>
               
               {/* Social Links */}
               <div className="flex space-x-4">
@@ -102,7 +101,8 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-200 hover:text-white transition-colors duration-200"
+                    className="hover:text-white transition-colors duration-200"
+                    style={{ color: '#d9d8d6' }}
                   >
                     {link.name}
                   </Link>
@@ -123,7 +123,8 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-200 hover:text-white transition-colors duration-200"
+                    className="hover:text-white transition-colors duration-200"
+                    style={{ color: '#d9d8d6' }}
                   >
                     {link.name}
                   </Link>
@@ -144,7 +145,8 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-200 hover:text-white transition-colors duration-200"
+                    className="hover:text-white transition-colors duration-200"
+                    style={{ color: '#d9d8d6' }}
                   >
                     {link.name}
                   </Link>
@@ -162,7 +164,7 @@ const Footer = () => {
           className="border-t border-[#6B2D73]/30 mt-12 pt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-300 text-sm mb-4 md:mb-0">
+            <div className="text-sm mb-4 md:mb-0" style={{ color: '#d9d8d6' }}>
               {t('footer.copyright').replace('2024', currentYear.toString())}
             </div>
             
@@ -171,7 +173,8 @@ const Footer = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                  className="hover:text-white transition-colors duration-200"
+                  style={{ color: '#d9d8d6' }}
                 >
                   {link.name}
                 </Link>

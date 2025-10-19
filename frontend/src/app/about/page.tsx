@@ -261,12 +261,30 @@ export default function AboutPage() {
          />
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Logo */}
+          <motion.div
+            className="mb-8 sm:mb-12 flex justify-center"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          >
+            <div className="relative">
+              <img 
+                src="/Logo-icon.png" 
+                alt="Bitwreckers Logo" 
+                className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain filter drop-shadow-2xl"
+              />
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#6B2D73] to-[#2D7363] rounded-full blur-2xl opacity-30 scale-110 -z-10" />
+            </div>
+          </motion.div>
+
           {/* Main Title */}
           <motion.h1
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-[#b376bf] via-[#d4aad9] to-[#2D7363] bg-clip-text text-transparent leading-tight"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
           >
 {t('about.title')}
           </motion.h1>

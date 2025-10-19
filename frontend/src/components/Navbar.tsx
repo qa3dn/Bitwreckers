@@ -41,15 +41,18 @@ const Navbar = () => {
             : 'bg-white/5 backdrop-blur-sm'
         }`}>
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
+              className="flex items-center ml-2 sm:ml-4"
             >
-              <span className="text-xl sm:text-2xl font-bold text-white">
-                Bitwreckers
-              </span>
+              <img 
+                src="/Logo-H-Gray-01.png" 
+                alt="Bitwreckers Logo" 
+                className="h-8 sm:h-10 md:h-12 object-contain filter drop-shadow-xl brightness-110 contrast-125 hover:brightness-125 hover:contrast-150 transition-all duration-300"
+              />
             </motion.div>
           </Link>
 
@@ -65,7 +68,8 @@ const Navbar = () => {
               >
                 <Link
                   href={item.href}
-                  className="text-sm font-semibold transition-colors duration-200 text-white hover:text-[#d4aad9] whitespace-nowrap"
+                  className="text-sm font-semibold transition-colors duration-200 hover:text-[#d4aad9] whitespace-nowrap"
+                  style={{ color: '#d9d8d6' }}
                 >
                   {item.name}
                 </Link>
@@ -86,8 +90,9 @@ const Navbar = () => {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                 language === 'en'
                   ? 'bg-[#2D7363] text-white hover:bg-[#5fa896]'
-                  : 'text-white/80 hover:text-white'
+                  : 'hover:text-white'
               }`}
+              style={language !== 'en' ? { color: '#d9d8d6' } : {}}
             >
               English
             </button>
@@ -102,8 +107,9 @@ const Navbar = () => {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                 language === 'ar'
                   ? 'bg-[#2D7363] text-white hover:bg-[#5fa896]'
-                  : 'text-white/80 hover:text-white'
+                  : 'hover:text-white'
               }`}
+              style={language !== 'ar' ? { color: '#d9d8d6' } : {}}
             >
               العربية
             </button>
@@ -174,8 +180,9 @@ const Navbar = () => {
                       className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                         language === 'en'
                           ? 'bg-[#2D7363] text-white'
-                          : 'text-white/80 hover:text-white'
+                          : 'hover:text-white'
                       }`}
+                      style={language !== 'en' ? { color: '#d9d8d6' } : {}}
                     >
                       English
                     </button>
@@ -189,8 +196,9 @@ const Navbar = () => {
                       className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                         language === 'ar'
                           ? 'bg-[#2D7363] text-white'
-                          : 'text-white/80 hover:text-white'
+                          : 'hover:text-white'
                       }`}
+                      style={language !== 'ar' ? { color: '#d9d8d6' } : {}}
                     >
                       العربية
                     </button>

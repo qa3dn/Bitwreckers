@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight, MessageCircle } from 'lucide-react';
-import ParticlesAnimation from './ParticlesAnimation';
+import PatternBackground from './PatternBackground';
 import useTranslation from '../hooks/useTranslation';
 
 const Hero = () => {
@@ -39,14 +39,14 @@ const Hero = () => {
 
   return (
     <section className={`relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#4d1f53] via-[#6B2D73] to-[#9347a0] ${isRTL ? 'font-arabic' : 'font-english'}`} dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* Particles Animation */}
-      <ParticlesAnimation />
+      {/* Pattern Background */}
+      <PatternBackground />
       
       {/* Overlay Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#6B2D73]/20 to-[#6B2D73]/40 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#6B2D73]/5 to-[#6B2D73]/10 z-20" />
       
       {/* Main Content */}
-      <div className="relative z-20 max-w-6xl mx-auto px-4 text-center">
+      <div className="relative z-30 max-w-6xl mx-auto px-4 text-center">
         {/* Brand/Logo */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -81,27 +81,27 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8 sm:mb-12 px-4"
         >
           <Link href="/join">
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#9347a0] to-[#b376bf] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 text-sm sm:text-base w-full sm:w-auto"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="glass-button glass-button-enhanced px-6 sm:px-8 py-3 sm:py-4 text-white font-semibold flex items-center gap-2 text-sm sm:text-base w-full sm:w-auto relative z-10"
             >
-              <span>{t('hero.cta1')}</span>
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2.5} />
+              <span className="relative z-10">{t('hero.cta1')}</span>
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 relative z-10" strokeWidth={2.5} />
             </motion.button>
           </Link>
           
           <Link href="/consultation">
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#6B2D73] to-[#9347a0] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 text-sm sm:text-base w-full sm:w-auto"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="glass-button glass-button-enhanced px-6 sm:px-8 py-3 sm:py-4 text-white font-semibold flex items-center gap-2 text-sm sm:text-base w-full sm:w-auto relative z-10"
             >
-              <span>{t('hero.cta2')}</span>
-              <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2.5} />
+              <span className="relative z-10">{t('hero.cta2')}</span>
+              <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 relative z-10" strokeWidth={2.5} />
             </motion.button>
           </Link>
         </motion.div>

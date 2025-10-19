@@ -888,6 +888,72 @@
     "contactUs": "Contact Us",
     "emailUs": "Email Us"
   },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "We provide comprehensive technology solutions for your business needs",
+    "webDevelopment": {
+      "title": "Web Development",
+      "description": "Modern, responsive web applications built with cutting-edge technologies"
+    },
+    "mobileApps": {
+      "title": "Mobile Development",
+      "description": "Cross-platform mobile apps for iOS and Android using Flutter"
+    },
+    "uiUxDesign": {
+      "title": "UI/UX Design",
+      "description": "Beautiful, intuitive user interfaces that enhance user experience"
+    },
+    "aiAutomation": {
+      "title": "AI & Automation",
+      "description": "Intelligent solutions that streamline processes and boost efficiency"
+    },
+    "cloudDevOps": {
+      "title": "Cloud & DevOps",
+      "description": "Scalable cloud infrastructure and automated deployment pipelines"
+    },
+    "techConsulting": {
+      "title": "Tech Consulting",
+      "description": "Strategic technology guidance to help your business grow"
+    },
+    "howWeWork": {
+      "title": "How We Work",
+      "research": {
+        "title": "Research",
+        "description": "We start by understanding your needs and creating a detailed roadmap for your project."
+      },
+      "design": {
+        "title": "Design",
+        "description": "Our design team creates beautiful, user-friendly interfaces that align with your brand."
+      },
+      "development": {
+        "title": "Development",
+        "description": "Expert developers bring your vision to life with clean, efficient code."
+      },
+      "launch": {
+        "title": "Launch",
+        "description": "We ensure smooth deployment and provide ongoing support for your success."
+      }
+    },
+    "stats": {
+      "projectsDelivered": "Projects Delivered",
+      "responseTime": "Response Time",
+      "clientSatisfaction": "Client Satisfaction"
+    },
+    "cta": {
+      "title": "Ready to Start Your Project?",
+      "subtitle": "Let's build something amazing together. Get in touch with our team today.",
+      "startProject": "Start Your Project",
+      "readyToStart": "Ready to Start?"
+    },
+    "categories": {
+      "webApps": "Web Applications",
+      "mobile": "Mobile Development",
+      "aiMl": "AI & Machine Learning",
+      "cloud": "Cloud Solutions"
+    },
+    "scrollToExplore": "Scroll to explore our services",
+    "whatWeOffer": "What We Offer"
+  },
   "terms": {
     "title": "Terms of Service",
     "subtitle": "Please read these terms of service carefully before using our services.",

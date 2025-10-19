@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   creator: 'Bitwreckers',
   publisher: 'Bitwreckers',
   icons: {
-    icon: '/bit-l.png',
-    shortcut: '/bit-l.png',
-    apple: '/bit-l.png',
+    icon: '/Logo-icon.png',
+    shortcut: '/Logo-icon.png',
+    apple: '/Logo-icon.png',
   },
   formatDetection: {
     email: false,

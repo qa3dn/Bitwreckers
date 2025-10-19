@@ -227,7 +227,7 @@ export default function JoinPage() {
           </motion.div>
           
           <motion.h1
-            className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-[#b376bf] via-[#d4aad9] to-[#2D7363] bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-[#b376bf] via-[#d4aad9] to-[#2D7363] bg-clip-text text-transparent leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -236,7 +236,7 @@ export default function JoinPage() {
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-[#F8F8F8] max-w-3xl mx-auto leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-[#F8F8F8] max-w-3xl mx-auto leading-relaxed px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -263,8 +263,8 @@ export default function JoinPage() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="bg-[#131422]/50 backdrop-blur-xl rounded-3xl border border-[#6B2D73]/20 p-8 md:p-12">
-            <form onSubmit={handleSubmit} className="space-y-12">
+          <div className="bg-[#131422]/50 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-[#6B2D73]/20 p-4 sm:p-6 md:p-8 lg:p-12">
+            <form onSubmit={handleSubmit} className="space-y-8 sm:space-y-10 md:space-y-12">
               
               {/* Section 1: Basic Information */}
               <motion.div
@@ -282,7 +282,7 @@ export default function JoinPage() {
                   </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label className="block text-[#F8F8F8] font-semibold mb-2">
                       {isRTL ? 'الاسم الكامل' : 'Full Name'} *
@@ -524,7 +524,7 @@ export default function JoinPage() {
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <label className="block text-[#F8F8F8] font-semibold mb-2">
                         {isRTL ? 'ما الذي تتوقع أن تستفيده؟' : 'What do you expect to gain?'} *
@@ -613,7 +613,7 @@ export default function JoinPage() {
                     <label className="block text-[#F8F8F8] font-semibold mb-4 text-lg">
                       {isRTL ? 'كم ساعة أسبوعياً تستطيع الالتزام؟' : 'How many hours per week can you commit?'} *
                     </label>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                       {hoursOptions.map((option) => (
                         <label key={option} className="flex items-center gap-3 cursor-pointer group p-4 bg-gray-800/30 rounded-xl hover:bg-gray-700/30 transition-all duration-300">
                           <input
@@ -637,7 +637,7 @@ export default function JoinPage() {
                     <label className="block text-[#F8F8F8] font-semibold mb-4 text-lg">
                       {isRTL ? 'ما نوع الأنشطة التي تفضلها؟' : 'Which activities would you like to be part of?'} *
                     </label>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                       {activities.map((activity) => (
                         <label key={activity} className="flex items-start gap-3 cursor-pointer group p-4 bg-gray-800/30 rounded-xl hover:bg-gray-700/30 transition-all duration-300">
                           <input
@@ -764,7 +764,7 @@ export default function JoinPage() {
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group relative px-12 py-6 bg-gradient-to-r from-[#2D7363] to-[#5fa896] text-white rounded-full font-bold text-xl shadow-2xl hover:shadow-[#2D7363]/25 transition-all duration-300 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="group relative px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 bg-gradient-to-r from-[#2D7363] to-[#5fa896] text-white rounded-full font-bold text-lg sm:text-xl shadow-2xl hover:shadow-[#2D7363]/25 transition-all duration-300 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <span className="relative z-10 flex items-center gap-3">
                     {isSubmitting ? (
